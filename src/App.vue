@@ -40,6 +40,13 @@ p {
 	font-size: 1.5rem;
 }
 
+.fa {
+	font-size: 36px;
+	padding: 0;
+	margin: 0;
+	color: white;
+}
+
 #app {
 	font-family: source-code-pro, monospace;
 	font-weight: 400;
