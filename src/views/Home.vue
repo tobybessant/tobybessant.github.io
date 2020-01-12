@@ -1,19 +1,19 @@
 <template>
   <div class="home">
-    <AppTitle />
+    <AppHeader />
 		<HomeNav />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import AppTitle from '@/components/AppTitle.vue'
+import AppHeader from '@/components/AppHeader.vue'
 import HomeNav from '@/components/HomeNav.vue'
 
 export default {
   name: 'home',
   components: {
-    AppTitle,
+    AppHeader,
 		HomeNav
   }
 }

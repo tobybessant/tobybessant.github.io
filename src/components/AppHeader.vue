@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1 id="appTitle">TOBY BESSANT</h1>
+		<h1 id="app-title">TOBY BESSANT</h1>
 		<div class="link-icons">
 			<a href="https://github.com/tobybessant">
 				<font-awesome-icon  :icon="['fab', 'github-square']" />

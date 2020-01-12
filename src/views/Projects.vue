@@ -1,7 +1,7 @@
 <template>
-  <div class="about">
+  <div class="projects">
 		<PageNav />
-		<PageHeader text="ABOUT" subheading=""/>
+		<PageHeader text="PROJECTS" subheading=""/>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import PageNav from "@/components/PageNav.vue"
 import PageHeader from '@/components/PageHeader.vue'
 
 export default {
-  name: 'about',
+  name: 'projects',
   components: {
 		PageNav,
 		PageHeader

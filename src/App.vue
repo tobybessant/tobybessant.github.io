@@ -34,6 +34,13 @@ h1 {
 	letter-spacing: 10px;
 }
 
+h2 {
+	padding: 0;
+	margin: 0 0 8px 0;
+	font-size: 3rem;
+	letter-spacing: 5px;
+}
+
 p {
 	padding: 0;
 	margin: 0 0 16px 0;
