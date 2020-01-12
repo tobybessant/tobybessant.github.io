@@ -23,6 +23,7 @@ export default {
 .home-nav-button {
 	padding: 5px 15px;
 	border: 1px solid black;
+	margin-right: 20px;
 }
 
 .home-nav-button:hover {
