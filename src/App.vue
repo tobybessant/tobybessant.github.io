@@ -24,14 +24,14 @@ body {
 	min-height: 100vh;
 	min-width: 100vw;
 	background: rgb(48,73,83);
-	background: radial-gradient(circle, rgba(48,73,83,1) 0%, rgba(0,0,0,1) 100%);
+	background: radial-gradient(circle, rgba(48,73,83,1) 0%, rgba(0,0,0,1) 160%);
 }
 
 h1 {
 	padding: 0;
 	margin: 0 0 8px 0;
 	font-size: 4rem;
-	letter-spacing: 20px;
+	letter-spacing: 10px;
 }
 
 p {

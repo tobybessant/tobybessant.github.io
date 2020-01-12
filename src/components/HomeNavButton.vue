@@ -22,13 +22,17 @@ export default {
 <style scoped>
 .home-nav-button {
 	padding: 5px 25px;
-	border: 1px solid white;
+	border: 2px solid white;
 	margin: 30px 30px 0 0;
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: 0.3s;
 }
 
 .home-nav-button:hover {
 	cursor: pointer;
-	box-shadow: 0px 0px 10px white;
+	box-shadow: 0px 0px 4px white;
+	background-color: rgba(255, 255, 255, 0.3);
+	transition: 0.3s;
 }
 
 .button-label {
