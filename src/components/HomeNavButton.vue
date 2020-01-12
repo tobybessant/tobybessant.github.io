@@ -1,6 +1,6 @@
 <template>
   <div class="home-nav-button" @click="clicked()">
-		{{ label }}
+		<span class="button-label">{{ label }}</span>
   </div>
 </template>
 
@@ -21,13 +21,17 @@ export default {
 
 <style scoped>
 .home-nav-button {
-	padding: 5px 15px;
-	border: 1px solid black;
-	margin-right: 20px;
+	padding: 5px 25px;
+	border: 1px solid white;
+	margin: 30px 30px 0 0;
 }
 
 .home-nav-button:hover {
 	cursor: pointer;
-	box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 0px 10px white;
+}
+
+.button-label {
+	font-size: 1.5rem;
 }
 </style>
