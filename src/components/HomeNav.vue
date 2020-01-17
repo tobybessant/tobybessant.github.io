@@ -1,30 +1,30 @@
 <template>
   <div class="home-nav">
-		<HomeNavButton location="projects" label="Projects" />
-		<HomeNavButton location="blog" label="Blog" />
-		<HomeNavButton location="contact" label="Contact" />
-		<HomeNavButton location="about" label="About" />
+    <HomeNavButtonPrimary location="projects" label="View Projects" />
+    <HomeNavButtonSecondary location="projects" label="My CV" />
   </div>
 </template>
 
 <script>
-import HomeNavButton from "@/components/HomeNavButton.vue"
+import HomeNavButtonPrimary from "@/components/HomeNavButtonPrimary.vue";
+import HomeNavButtonSecondary from "@/components/HomeNavButtonSecondary.vue";
 
 export default {
-  name: 'HomeNav',
-	components: {
-		HomeNavButton
-	}
-}
+  name: "HomeNav",
+  components: {
+    HomeNavButtonPrimary,
+    HomeNavButtonSecondary
+  }
+};
 </script>
 
 <style scoped>
 .home-nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
-	flex-wrap: wrap;
-	margin: 70px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 70px 0;
 }
 </style>

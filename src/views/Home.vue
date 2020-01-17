@@ -1,26 +1,26 @@
 <template>
-  <div class="home">
+  <div class="app-w-defaults home">
     <AppHeader />
-		<HomeNav />
+    <HomeNav />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import AppHeader from '@/components/AppHeader.vue'
-import HomeNav from '@/components/HomeNav.vue'
+import AppHeader from "@/components/AppHeader.vue";
+import HomeNav from "@/components/HomeNav.vue";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     AppHeader,
-		HomeNav
+    HomeNav
   }
-}
+};
 </script>
 
 <style scoped>
 .home {
-	padding-top: 160px;
+  padding-top: 160px;
 }
 </style>

@@ -1,37 +1,43 @@
 <template>
-  <div class="home-nav-button" @click="clicked()">
-		<span class="button-label">{{ label }}</span>
-  </div>
+  <router-link :to="location">
+    {{ label }}
+  </router-link>
 </template>
 
 <script>
 export default {
-  name: 'PageNavButton',
-	props: {
-		label: String,
-		location: String
-	},
-	methods: {
-		clicked: function() {
-			this.$router.push(this.location);
-		}
-	}
-}
+  name: "PageNavButton",
+  props: {
+    label: String,
+    location: String
+  },
+  methods: {
+    clicked: function() {
+      this.$router.push(this.location);
+    }
+  }
+};
 </script>
 
 <style scoped>
-.home-nav-button {
-	margin: 30px 30px 0 0;
+a {
+  color: white;
+  text-decoration: none;
 }
 
-.home-nav-button:hover {
-	cursor: pointer;
-	box-shadow: 0px 0px 4px white;
-	background-color: rgba(255, 255, 255, 0.3);
-	transition: 0.3s;
+a:hover {
+  cursor: pointer;
 }
 
-.button-label {
-	font-size: 1.5rem;
+a {
+  font-size: 1.5rem;
+}
+
+.router-link-exact-active {
+  font-weight: bold;
+}
+
+a.router-link-exact-active {
+  color: #24e3b7;
 }
 </style>

@@ -1,25 +1,23 @@
 <template>
-  <div class="contact">
-		<PageNav />
-		<PageHeader text="CONTACT" subheading=""/>
+  <div class="app-w-defaults">
+    <PageNav />
+    <PageHeader text="CONTACT" subheading="" />
   </div>
 </template>
 
 <script>
-import PageNav from "@/components/PageNav.vue"
-import PageHeader from '@/components/PageHeader.vue'
+import PageNav from "@/components/PageNav.vue";
+import PageHeader from "@/components/PageHeader.vue";
 
 export default {
-  name: 'contact',
+  name: "contact",
   components: {
-		PageNav,
-		PageHeader
+    PageNav,
+    PageHeader
   }
-}
+};
 </script>
 
 <style scoped>
-.home {
-	padding-top: 160px;
-}
+
 </style>
