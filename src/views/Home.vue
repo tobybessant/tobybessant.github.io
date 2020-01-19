@@ -1,5 +1,5 @@
 <template>
-  <div class="app-w-defaults home">
+  <div class="app-horizontal-defaults home">
     <AppHeader />
     <HomeNav />
   </div>

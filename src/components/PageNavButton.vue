@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="location">
+  <router-link :to="{ name: location }" >
     {{ label }}
   </router-link>
 </template>
@@ -12,9 +12,6 @@ export default {
     location: String
   },
   methods: {
-    clicked: function() {
-      this.$router.push(this.location);
-    }
   }
 };
 </script>
@@ -33,11 +30,13 @@ a {
   font-size: 1.5rem;
 }
 
-.router-link-exact-active {
+a.router-link-exact-active {
+  color: #24e3b7;
   font-weight: bold;
 }
 
-a.router-link-exact-active {
+a.router-link-active {
   color: #24e3b7;
+  font-weight: bold;
 }
 </style>

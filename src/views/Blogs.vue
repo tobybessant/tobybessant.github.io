@@ -1,5 +1,5 @@
 <template>
-  <div class="app-w-defaults">
+  <div class="app-horizontal-defaults app-vertical-defaults">
     <PageNav />
     <PageHeader text="BLOGS" subheading="" />
   </div>

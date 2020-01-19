@@ -1,7 +1,7 @@
 <template>
   <div class="page-nav">
     <div class="site-title">
-      <PageNavButton location="/" label="TOBY BESSANT" />
+      <PageNavButton location="home" label="TOBY BESSANT" />
     </div>
     <div class="nav-buttons">
       <PageNavButton location="projects" label="Projects" />

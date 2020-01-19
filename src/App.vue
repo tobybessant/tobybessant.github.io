@@ -45,6 +45,13 @@ h2 {
   letter-spacing: 5px;
 }
 
+h3 {
+  padding: 0;
+  margin: 0 0 4px 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
 p {
   padding: 0;
   margin: 0 0 16px 0;
@@ -71,10 +78,14 @@ p {
   color: #fff;
 }
 
-.app-w-defaults {
+.app-horizontal-defaults {
   max-width: 100%;
   padding: 0 60px;
   word-wrap: break-word;
+}
+
+.app-vertical-defaults {
+  margin-bottom: 100px;
 }
 
 .background {

@@ -1,5 +1,5 @@
 <template>
-  <div class="app-w-defaults">
+  <div class="app-horizontal-defaults">
     <PageNav />
     <PageHeader text="CONTACT" subheading="" />
   </div>
