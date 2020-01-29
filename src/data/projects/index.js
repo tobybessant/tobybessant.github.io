@@ -1,7 +1,12 @@
-module.exports.fetchProject = slug => {
-  return this.projects.find(project => {
+module.exports.fetchProject = async slug => {
+  let p = this.projects.find(project => {
     return this.generateProjectSlug(project) === slug;
   });
+
+  let body = await fetch(p.bodyPath)
+  console.log(body)
+
+  return p;
 };
 
 module.exports.generateProjectSlug = project => {
@@ -12,13 +17,14 @@ module.exports.projects = [
   {
     name: "Data Miner",
     description:
-      "I am the desc!!I am the desc!!I am the desc!!I am the desc!!I am the desc!!I am the desc!!",
+      "I am the desc!! I am the desc!! I am the desc!! I am the desc!! I am the desc!! I am the desc!!",
     tags: ["C#"],
     last_updated: "4th Jan 2020",
     img: [
       "https://www.tobybessant.co.uk/images/portfolioimages/university-room-system-img1.png",
       "https://www.tobybessant.co.uk/images/portfolioimages/university-room-system-img1.png"
-    ]
+    ],
+    bodyPath: "posts/dataminer.md"
   },
   {
     name: "Street Scene",

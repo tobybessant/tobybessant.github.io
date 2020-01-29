@@ -18,6 +18,9 @@
       <div class="project-details">
         <p>{{ project.description }}</p>
       </div>
+      <div class="post-body">
+        <p>{{ project.body }}</p>
+      </div>
     </div>
 
     <div v-if="!project">
