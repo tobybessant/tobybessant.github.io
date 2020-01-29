@@ -19,3 +19,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# compiled json data for deployment
+/src/data/projects/compiled.json
