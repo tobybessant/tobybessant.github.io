@@ -13,7 +13,7 @@ module.exports.generateProjectSlug = project => {
   return project.name.replace(" ", "");
 };
 
-module.exports.projects = [
+module.exports.data = [
   {
     name: "Data Miner",
     description:
@@ -27,6 +27,16 @@ module.exports.projects = [
     bodyPath: "posts/dataminer.md"
   },
   {
+    name: "Typist",
+    description: "Online Type racing game",
+    tags: ["VueJS", "Node", "SPA"],
+    last_updated: "23rd Aug 2019",
+    bodyPath: "posts/typist.md"
+  },
+];
+
+/*
+{
     name: "Street Scene",
     description: "Wooooooo aosdfoasdfo",
     tags: ["Unity", "C#", "3D Modelling"],
@@ -45,15 +55,8 @@ module.exports.projects = [
     last_updated: "23rd Aug 2019"
   },
   {
-    name: "Typist",
-    description: "Wooooooo aosdfoasdfo",
-    tags: ["Vue", "Node", "SPA"],
-    last_updated: "23rd Aug 2019"
-  },
-  {
     name: "Portfolio Site",
     description: "Wooooooo aosdfoasdfo",
     tags: ["Vue", "Node"],
     last_updated: "23rd Aug 2019"
-  }
-];
+  } */

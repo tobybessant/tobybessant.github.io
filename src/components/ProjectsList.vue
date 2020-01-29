@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { projects } from "@/data/projects";
+import projects from "@/data/projects/compiled.json";
 import ProjectItem from "@/components/ProjectItem.vue";
 
 export default {

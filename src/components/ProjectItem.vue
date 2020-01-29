@@ -9,21 +9,14 @@
 </template>
 
 <script>
-import { generateProjectSlug } from "../data/projects";
-
 export default {
   name: "ProjectItem",
   props: {
     project: null
   },
-  data: function() {
-    return {
-      generateProjectSlug
-    };
-  },
   methods: {
     gotoProject: function() {
-      this.$router.push("projects/" + this.generateProjectSlug(this.project));
+      this.$router.push("projects/" + this.project.slug);
     }
   }
 };

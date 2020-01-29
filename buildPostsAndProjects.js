@@ -7,7 +7,9 @@ const converter = new showdown.Converter();
 
 // -- PROJECTS
 const projectsRootFolder = "./src/data/projects";
-const projectsData = require(projectsRootFolder).projects;
+const projects = require(projectsRootFolder);
+const projectsData = projects.data;
+const compiledDestination = path.join(projectsRootFolder, "compiled.json");
 
 for (let project of projectsData) {
   if (project.bodyPath) {
@@ -16,6 +18,9 @@ for (let project of projectsData) {
     );
 
     project.bodyContent = converter.makeHtml(raw.toString());
+    project.slug = projects.generateProjectSlug(project);
   }
 }
+
+fs.writeFileSync(compiledDestination, JSON.stringify(projectsData));
 

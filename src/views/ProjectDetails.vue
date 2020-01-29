@@ -18,8 +18,7 @@
       <div class="project-details">
         <p>{{ project.description }}</p>
       </div>
-      <div class="post-body">
-        <p>{{ project.body }}</p>
+      <div class="post-body" v-html="project.bodyContent">
       </div>
     </div>
 
@@ -35,7 +34,7 @@ import PageHeader from "@/components/PageHeader.vue";
 
 import { Carousel, Slide } from "vue-carousel";
 
-import { fetchProject } from "../data/projects";
+import projects from "@/data/projects/compiled.json";
 
 export default {
   name: "ProjectDetailsView",
@@ -54,8 +53,11 @@ export default {
   watch: {
     id: {
       handler: function() {
-        this.id = this.$route.params.projectName;
-        this.project = fetchProject(this.id);
+        this.id = this.$route.params.projectSlug;
+        const projectData = projects.filter(p => p.slug === this.id);
+        if(projectData[0]) {
+          this.project = projectData[0];
+        }
       },
       immediate: true
     }
