@@ -21,4 +21,4 @@ yarn-error.log*
 *.sw?
 
 # compiled json data for deployment
-/src/data/projects/compiled.json
+src/data/projects/compiled.json
