@@ -4,11 +4,16 @@
     <div v-if="project" class="project-details">
       <PageHeader :text="id" />
       <div class="tags">
-        <div v-for="(tag, index) in project.tags" :key="index" class="tag">
-          <p>{{ tag }}</p>
-        </div>
+        <ProjectTag v-for="(tag, index) in project.tags" 
+                    :key="index"
+                    :tag="tag" 
+        />
       </div>
-      <Carousel v-if="project.img" :per-page="1">
+      <Carousel v-if="project.img"
+                class="project-carousel"
+                :per-page="2"
+                :navigationEnabled="true"
+        >
         <Slide v-for="(imageSrc, index) in project.img" :key="index">
           <div class="slide-content">
             <img class="carousel-image" :src="imageSrc" />
@@ -31,6 +36,7 @@
 <script>
 import PageNav from "@/components/PageNav.vue";
 import PageHeader from "@/components/PageHeader.vue";
+import ProjectTag from "@/components/ProjectTag.vue";
 
 import { Carousel, Slide } from "vue-carousel";
 
@@ -41,6 +47,7 @@ export default {
   components: {
     PageNav,
     PageHeader,
+    ProjectTag,
     Carousel,
     Slide
   },
@@ -70,15 +77,16 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-bottom: 15px;
 }
 
-.tag {
-  height: 24px;
-  padding: 5px 10px;
-  background: #777;
-  border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  color: #fff;
+.tags>div:not(:last-child) {
+  margin-right: 10px;
+}
+*/
+
+.project-carousel {
+  margin: 20px 0;
 }
 
 .slide-content {

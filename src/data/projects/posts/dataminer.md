@@ -1,5 +1,4 @@
-# Data Miner
-ashdoashdosauhdousaahdosuadh
-
-## Heading 2 
-asndasndoisa
+# Core Skills
+| hello | table | col | 
+| ----- | ----- | --- |
+| val 1 | val2  |val4 |

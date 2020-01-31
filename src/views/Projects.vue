@@ -2,7 +2,7 @@
   <div class="app-horizontal-defaults app-vertical-defaults">
     <PageNav />
     <PageHeader text="PROJECTS" subheading="" />
-    <ProjectsDisplay />
+    <ProjectsDisplay :urlQuery="this.query"/>
   </div>
 </template>
 
@@ -17,6 +17,9 @@ export default {
     PageNav,
     PageHeader,
     ProjectsDisplay
+  },
+  props: {
+    query: Object
   }
 };
 </script>

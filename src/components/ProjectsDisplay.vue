@@ -19,6 +19,14 @@ export default {
   components: {
     ProjectsList
   },
+  props: {
+    urlQuery: Object
+  },
+  mounted() {
+    if(this.urlQuery) {
+      this.filterValue = this.urlQuery.q;
+    }
+  },
   data: function() {
     return {
       filterValue: ""

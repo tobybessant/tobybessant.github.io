@@ -5,6 +5,9 @@ const path = require("path");
 const showdown = require("showdown");
 const converter = new showdown.Converter();
 
+converter.setOption("headerLevelStart", 3);
+converter.setOption("tables", true);
+
 // -- PROJECTS
 const projectsRootFolder = "./src/data/projects";
 const projects = require(projectsRootFolder);
