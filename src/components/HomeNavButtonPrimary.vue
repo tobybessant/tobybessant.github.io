@@ -31,7 +31,10 @@ export default {
 
 .home-nav-button:hover {
   cursor: pointer;
-  background-color:#24E3B7;
+  transform: scale(1.03);
+  box-shadow: 
+    0 3px 5px -4px #03eeb7, 
+    0 8px 10px -2px #50e7c4;
   color: black;
   transition: 0.3s;
 }

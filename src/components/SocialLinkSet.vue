@@ -1,0 +1,26 @@
+<template>
+  <div class="link-icons">
+    <a href="https://github.com/tobybessant" target="_blank">
+      <font-awesome-icon :icon="['fab', 'github-square']" />
+    </a>
+    <a href="https://uk.linkedin.com/in/tobybessant" target="_blank">
+      <font-awesome-icon :icon="['fab', 'linkedin']" />
+    </a>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "SocialLinkSet"
+};
+</script>
+
+<style>
+.link-icons a {
+  display: inline-block;
+  font-size: 36px;
+  text-decoration: none;
+  color: white;
+  margin: 0 24px 15px 0;
+}
+</style>

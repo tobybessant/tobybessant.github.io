@@ -41,7 +41,7 @@ export default {
 .card {
   flex: 1;
   width: 350px;
-  min-width: 350px;
+  min-width: 280px;
   height: 320px;
   background: #fff;
   color: #3f3d56;

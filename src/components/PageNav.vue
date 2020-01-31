@@ -1,9 +1,7 @@
 <template>
   <div class="page-nav">
-    <div class="site-title">
-      <PageNavButton location="home" label="TOBY BESSANT" />
-    </div>
     <div class="nav-buttons">
+      <PageNavButton location="home" label="Intro" :exact="true" />
       <PageNavButton location="projects" label="Projects" />
       <PageNavButton location="blog" label="Blog" />
       <PageNavButton location="contact" label="Contact" />
@@ -25,25 +23,26 @@ export default {
 
 <style scoped>
 .page-nav {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   padding: 60px 0;
 }
 
 .nav-buttons {
+  max-width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-
+  flex-wrap: wrap;
 }
 
 .nav-buttons a:not(:last-child) {
-  margin-right: 30px;
+  margin-right: 1rem;
 }
 
 .site-title {
