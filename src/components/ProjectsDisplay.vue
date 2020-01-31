@@ -5,6 +5,7 @@
       name="projectSearch"
       id="projectSearch"
       placeholder="Search project name/tags"
+      autocomplete="off"
       v-model="filterValue"
     />
     <ProjectsList :filter="filterValue" />
@@ -20,11 +21,11 @@ export default {
     ProjectsList
   },
   props: {
-    urlQuery: Object
+    urlQuery: null
   },
   mounted() {
     if(this.urlQuery) {
-      this.filterValue = this.urlQuery.q;
+      this.filterValue = this.urlQuery;
     }
   },
   data: function() {

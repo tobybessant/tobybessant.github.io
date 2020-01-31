@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     searchTag: function() {
-      this.$router.push(`/projects?q=${this.tag}`);
+      this.$router.push({ name: "projects", params: { query: this.tag } });
     }
   }
 };
@@ -21,9 +21,9 @@ export default {
 <style scoped>
 .tag {
   padding: 5px 10px;
-  background: rgba(119, 119,199, 0.7);
-  border-radius: 10px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   color: #fff;
   transition: 0.3s;
 }
@@ -35,7 +35,9 @@ export default {
 }
 
 .tag:hover {
-  background: rgba(255, 255,255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
+  color: #fff;
   cursor: pointer;
   transition: 0.3s;
-}</style>
+}
+</style>

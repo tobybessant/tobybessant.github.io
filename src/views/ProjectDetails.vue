@@ -83,7 +83,6 @@ export default {
 .tags>div:not(:last-child) {
   margin-right: 10px;
 }
-*/
 
 .project-carousel {
   margin: 20px 0;
