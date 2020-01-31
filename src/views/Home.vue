@@ -22,5 +22,7 @@ export default {
 <style scoped>
 .home {
   padding-top: 160px;
+  width: 100%;
+  text-align: center;
 }
 </style>

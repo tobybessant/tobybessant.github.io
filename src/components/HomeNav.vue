@@ -22,7 +22,7 @@ export default {
 .home-nav {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin: 70px 0;
