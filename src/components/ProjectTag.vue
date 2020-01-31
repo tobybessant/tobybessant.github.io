@@ -21,7 +21,7 @@ export default {
 <style scoped>
 .tag {
   padding: 5px 10px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 9px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   color: #fff;

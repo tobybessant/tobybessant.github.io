@@ -42,7 +42,7 @@ export default {
     containsQueriesRegex: function() {
       let regex = "";
       this.searchQuery.forEach(filter => {
-        regex += "(?=.*" + filter.trim() + ")";
+        regex += "(?=.*" + filter.trim().replace("+", "\\+") + ")";
       });
 
       regex += ".*$";
@@ -66,10 +66,9 @@ export default {
 
 <style>
 .projects-list {
-  width: 100%;
-  margin-top: 25px;
+  width: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
 }

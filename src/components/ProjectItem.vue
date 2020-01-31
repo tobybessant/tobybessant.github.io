@@ -1,9 +1,17 @@
 <template>
   <div class="card" @click="gotoProject">
-    <img
-      class="card-img"
-      src="https://www.tobybessant.co.uk/images/portfolioimages/university-room-system-img1.png"
-    />
+    <div class="card-header">
+      <img v-if="this.project.img"
+        class="card-img"
+        :src="this.project.img[0]"
+      />
+
+      <img v-else
+        class="card-img"
+        src="https://picsum.photos/1920/1080"
+      />
+      
+    </div>
     <div class="container">
       <h3>{{ project.name }}</h3>
       <div class="tags">
@@ -16,7 +24,6 @@
 </template>
 
 <script>
-
 export default {
   name: "ProjectItem",
   props: {
@@ -34,8 +41,7 @@ export default {
 .card {
   flex: 1;
   width: 350px;
-  max-width: 350px;
-  min-width: 300px;
+  min-width: 350px;
   height: 320px;
   background: #fff;
   color: #3f3d56;
@@ -52,15 +58,26 @@ export default {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   color: black;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
+    0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
   transform: scale(1.03);
+}
+
+.card-header {
+  min-height: 65%;
+  max-height: 65%;
+  padding:0;
+  margin:0;
+  border-bottom: 1px solid darkgrey;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  overflow: hidden;
 }
 
 .card-img {
   max-width: 100%;
-  border-bottom: 1px solid darkgrey;
-  border-top-left-radius: 9px;
-  border-top-right-radius: 9px;
+  min-height: 100%;
 }
 
 .container {

@@ -3,8 +3,8 @@ module.exports.fetchProject = async slug => {
     return this.generateProjectSlug(project) === slug;
   });
 
-  let body = await fetch(p.bodyPath)
-  console.log(body)
+  let body = await fetch(p.bodyPath);
+  console.log(body);
 
   return p;
 };
@@ -15,24 +15,76 @@ module.exports.generateProjectSlug = project => {
 
 module.exports.data = [
   {
-    name: "Data Miner",
-    description:
-      "I am the desc!! I am the desc!! I am the desc!! I am the desc!! I am the desc!! I am the desc!!",
-    tags: ["C#"],
-    last_updated: "4th Jan 2020",
-    img: [
-      "https://www.tobybessant.co.uk/images/portfolioimages/university-room-system-img1.png",
-      "https://www.tobybessant.co.uk/images/portfolioimages/university-room-system-img1.png"
-    ],
-    bodyPath: "posts/dataminer.md"
-  },
-  {
     name: "Typist",
-    description: "Online Type racing game",
     tags: ["VueJS", "Node", "SPA"],
-    last_updated: "23rd Aug 2019",
+    last_updated: "10th Jan 2020",
+    img: [
+      "/assets/Typist/image3.png",
+      "/assets/Typist/image6.png",
+      "/assets/Typist/image9.png"
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/tobybessant/Typist"
+      }
+    ],
     bodyPath: "posts/typist.md"
   },
+  {
+    name: "Terrain Generation",
+    tags: ["C++", "OpenGL", "GLM"],
+    last_updated: "5th Jan 2020",
+    img: [
+      "/assets/TerrainGeneration/image1.png"
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/tobybessant/TerrainGeneration"
+      }
+    ],
+    bodyPath: "posts/terraingeneration.md"
+  },
+  {
+    name: "Model Loader",
+    tags: ["C++", "OpenGL", "GLM"],
+    last_updated: "29th Nov 2020",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/tobybessant/ModelLoader"
+      }
+    ],
+    bodyPath: "posts/modelloader.md"
+  },
+  {
+    name: "Keycard System",
+    tags: ["Java", "OOP"],
+    last_updated: "5th Sep 2019",
+    img: [
+      "https://www.tobybessant.co.uk/images/portfolioimages/university-room-system-img1.png"
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/tobybessant/University-Room-System"
+      }
+    ],
+    bodyPath: "posts/keycardsystem.md"
+  },
+  {
+    name: "Data Miner",
+    tags: ["C#"],
+    last_updated: "29rd Mar 2018",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/tobybessant/Shopping-Data-Miner"
+      }
+    ],
+    bodyPath: "posts/dataminer.md"
+  }
 ];
 
 /*

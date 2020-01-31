@@ -46,6 +46,7 @@ input[type=text] {
   color: inherit;
   background-color: rgba(255,255,255, 0.2);
   padding: 12px 16px;
+  margin-bottom: 30px;
 }
 
 input[type=text]:focus {
