@@ -1,5 +1,5 @@
 <template>
-  <div class="app-horizontal-defaults app-vertical-defaults">
+  <div class="app-horizontal-defaults app-vertical-defaults projects">
     <PageNav />
     <PageHeader text="PROJECTS" subheading="" />
     <ProjectsDisplay :urlQuery="this.query ? this.query : ''" />
@@ -24,4 +24,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.projects {
+  min-height: calc(320px * 4);
+}
+</style>

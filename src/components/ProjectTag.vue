@@ -9,17 +9,12 @@ export default {
   name: "ProjectTag",
   props: {
     tag: String,
-    tagClicked: Function
-  },
-  data: () => {
-    return {
-      isActive: false
-    }
+    tagClicked: Function,
+    isActive: Boolean(false)
   },
   methods: {
     searchTag: function() {
       this.tagClicked(this.tag);
-      this.isActive = !this.isActive;
     }
   },
   computed: {

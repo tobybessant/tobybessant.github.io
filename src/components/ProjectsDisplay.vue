@@ -7,6 +7,7 @@
         v-for="(tag, index) in availableTags"
         :key="index"
         :tag="tag"
+        :isActive="checkTag(tag)"
         :tagClicked="toggleTag"
       />
     </div>
@@ -33,6 +34,7 @@ export default {
   mounted() {
     this.projects = projects.projectsData;
     this.availableTags = projects.availableTags;
+    this.filterValueList = JSON.parse(localStorage.getItem("existingFilterList")) || [];
   
     if (this.urlQuery) {
       this.filterValue = this.urlQuery;
@@ -56,10 +58,15 @@ export default {
     },
     addTag: function(tag) {
       this.filterValueList.push(tag);
+      localStorage.setItem("existingFilterList", JSON.stringify(this.filterValueList));
     },
     removeTag: function(tag) {
       this.filterValueList = this.filterValueList.filter(t => t !== tag);
-    } 
+      localStorage.setItem("existingFilterList", JSON.stringify(this.filterValueList));
+    },
+    checkTag: function(tag) {
+      return this.filterValueList.includes(tag);
+    }
   }
 };
 </script>

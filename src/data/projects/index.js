@@ -16,7 +16,7 @@ module.exports.generateProjectSlug = project => {
 module.exports.data = [
   {
     name: "Typist",
-    tags: ["VueJS", "Node"],
+    tags: ["JavaScript", "VueJS", "NodeJS"],
     last_updated: "10th Jan 2020",
     img: [
       "/assets/Typist/image3.png",
@@ -32,8 +32,23 @@ module.exports.data = [
     bodyPath: "posts/typist.md"
   },
   {
+    name: "Habitat",
+    tags: ["JavaScript", "Angular8", "NodeJS"],
+    last_updated: "23rd Aug 2019",
+    img: [
+      "/assets/Habitat/image1.png"
+    ],
+    links: [
+      {
+        label: "Release Website",
+        url: "https://habitat.ebrisoft.com"
+      }
+    ],
+    bodyPath: "posts/habitat.md"
+  },
+  {
     name: "Terrain Generation",
-    tags: ["C++", "OpenGL", "GLM"],
+    tags: ["C++", "OpenGL"],
     last_updated: "5th Jan 2020",
     img: [
       "/assets/TerrainGeneration/image1.png"
@@ -48,7 +63,7 @@ module.exports.data = [
   },
   {
     name: "Model Loader",
-    tags: ["C++", "OpenGL", "GLM"],
+    tags: ["C++", "OpenGL"],
     last_updated: "29th Nov 2020",
     links: [
       {
@@ -100,12 +115,7 @@ module.exports.data = [
     tags: ["Unity", "C#", "3D Modelling"],
     last_updated: "23rd Aug 2019"
   },
-  {
-    name: "Habitat",
-    description: "Wooooooo aosdfoasdfo",
-    tags: ["Angular", "Ionic", "Cordova", "Mobile"],
-    last_updated: "23rd Aug 2019"
-  },
+  ,
   {
     name: "Portfolio Site",
     description: "Wooooooo aosdfoasdfo",

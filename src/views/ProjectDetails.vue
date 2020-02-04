@@ -3,7 +3,7 @@
     <PageNav />
     <PageHeader text="PROJECTS" subheading="" />
     <div class="back-container">
-      <router-link to="/projects" id="back-button">Back</router-link>
+      <router-link to="/projects" id="back-button">Back to Projects List</router-link>
     </div>
     
     <div v-if="project" class="project-details">
