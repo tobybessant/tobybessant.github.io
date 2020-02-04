@@ -1,6 +1,6 @@
 <template>
-  <div class="tag" v-bind:style="activeStyle">
-    <p @click="searchTag" >{{ tag }}</p>
+  <div @click="searchTag" class="tag" v-bind:style="activeStyle">
+    <p>{{ tag }}</p>
   </div>
 </template>
 

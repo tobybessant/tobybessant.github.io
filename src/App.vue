@@ -41,6 +41,7 @@ body {
 
 .svg {
   padding: 0;
+  padding-left: calc(100vw - 100%);
   margin: 0;
   min-height: 100vh;
   /* padding-bottom: 100px; */
