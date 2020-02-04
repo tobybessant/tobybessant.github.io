@@ -14,6 +14,8 @@ const projects = require(projectsRootFolder);
 const projectsData = projects.data;
 const compiledDestination = path.join(projectsRootFolder, "compiled.json");
 
+let availableTags = [];
+
 for (let project of projectsData) {
   if (project.bodyPath) {
     const raw = fs.readFileSync(
@@ -22,8 +24,18 @@ for (let project of projectsData) {
 
     project.bodyContent = converter.makeHtml(raw.toString());
     project.slug = projects.generateProjectSlug(project);
+
+    // check available tags
+    for(tag of project.tags) {
+      if(!availableTags.includes(tag)) availableTags.push(tag);
+    }
   }
 }
 
-fs.writeFileSync(compiledDestination, JSON.stringify(projectsData));
+const output = {
+  availableTags,
+  projectsData
+};
+
+fs.writeFileSync(compiledDestination, JSON.stringify(output));
 

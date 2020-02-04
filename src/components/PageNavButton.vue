@@ -36,6 +36,7 @@ a::after {
   font-weight: 100;
   font-size: 120%;
   line-height: 0.9;
+  top: 0px;
   opacity: 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;

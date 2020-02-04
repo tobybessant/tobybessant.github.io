@@ -16,7 +16,7 @@ module.exports.generateProjectSlug = project => {
 module.exports.data = [
   {
     name: "Typist",
-    tags: ["VueJS", "Node", "SPA"],
+    tags: ["VueJS", "Node"],
     last_updated: "10th Jan 2020",
     img: [
       "/assets/Typist/image3.png",

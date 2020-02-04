@@ -1,6 +1,6 @@
 <template>
-  <div class="tag">
-    <p @click="searchTag">{{ tag }}</p>
+  <div class="tag" v-bind:style="activeStyle">
+    <p @click="searchTag" >{{ tag }}</p>
   </div>
 </template>
 
@@ -8,11 +8,23 @@
 export default {
   name: "ProjectTag",
   props: {
-    tag: String
+    tag: String,
+    tagClicked: Function
+  },
+  data: () => {
+    return {
+      isActive: false
+    }
   },
   methods: {
     searchTag: function() {
-      this.$router.push({ name: "projects", params: { query: this.tag } });
+      this.tagClicked(this.tag);
+      this.isActive = !this.isActive;
+    }
+  },
+  computed: {
+    activeStyle: function() {
+      return this.isActive ? { background: 'white', color: 'black' } : null; 
     }
   }
 };
@@ -21,7 +33,7 @@ export default {
 <style scoped>
 .tag {
   padding: 5px 10px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(66, 66, 66, 0.6);
   border-radius: 9px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -35,7 +47,7 @@ export default {
 }
 
 .tag:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(82, 82, 82, 0.8);
   color: #fff;
   cursor: pointer;
   transition: 0.3s;

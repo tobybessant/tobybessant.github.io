@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import projects from "@/data/projects/compiled.json";
 import ProjectItem from "@/components/ProjectItem.vue";
 
 export default {
@@ -18,15 +17,8 @@ export default {
     ProjectItem
   },
   props: {
-    filter: String
-  },
-  data: function() {
-    return {
-      projects: []
-    };
-  },
-  mounted() {
-    this.projects = projects;
+    filter: String,
+    projects: Array
   },
   computed: {
     filteredProjects: function() {

@@ -1,6 +1,6 @@
 <template>
   <div class="home-nav">
-    <HomeNavButtonPrimary location="projects" label="View Projects" />
+    <HomeNavButtonPrimary location="projects" label="View Projects & Skills" />
     <HomeNavButtonSecondary location="projects" label="My CV" />
   </div>
 </template>

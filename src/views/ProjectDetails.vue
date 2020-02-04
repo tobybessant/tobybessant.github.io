@@ -1,8 +1,15 @@
 <template>
   <div class="app-horizontal-defaults">
     <PageNav />
+    <PageHeader text="PROJECTS" subheading="" />
+    <div class="back-container">
+      <router-link to="/projects" id="back-button">Back</router-link>
+    </div>
+    
     <div v-if="project" class="project-details">
-      <PageHeader :text="project.name" />
+      <div class="project-details-header">
+        <h3>{{ project.name }}</h3>
+      </div>
       <div class="meta">
         <div class="tags">
           <ProjectTag
@@ -17,22 +24,8 @@
           </div>
         </div>
       </div>
-
-      <Carousel
-        v-if="project.img"
-        class="project-carousel"
-        :per-page="2"
-        :navigationEnabled="true"
-      >
-        <Slide v-for="(imageSrc, index) in project.img" :key="index">
-          <div class="slide-content">
-            <img class="carousel-image" :src="imageSrc" />
-          </div>
-        </Slide>
-      </Carousel>
       <div class="post-body" v-html="project.bodyContent"></div>
     </div>
-
     <div v-if="!project">
       <PageHeader text="That project does not exist." subheading="" />
     </div>
@@ -44,8 +37,6 @@ import PageNav from "@/components/PageNav.vue";
 import PageHeader from "@/components/PageHeader.vue";
 import ProjectTag from "@/components/ProjectTag.vue";
 
-import { Carousel, Slide } from "vue-carousel";
-
 import projects from "@/data/projects/compiled.json";
 
 export default {
@@ -53,9 +44,7 @@ export default {
   components: {
     PageNav,
     PageHeader,
-    ProjectTag,
-    Carousel,
-    Slide
+    ProjectTag
   },
   data: function() {
     return {
@@ -67,7 +56,7 @@ export default {
     id: {
       handler: function() {
         this.id = this.$route.params.projectSlug;
-        const projectData = projects.filter(p => p.slug === this.id);
+        const projectData = projects.projectsData.filter(p => p.slug === this.id);
         if (projectData[0]) {
           this.project = projectData[0];
         }
@@ -79,8 +68,28 @@ export default {
 </script>
 
 <style scoped>
+.project-details-header {
+  display: flex;
+}
+
+.back-container {
+  margin-bottom: 20px;
+}
+
+#back-button {
+  color:black;
+  background: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+}
+
 .project-details {
-  padding-bottom: 100px;
+  color: black;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 19px;
 }
 
 .meta {
