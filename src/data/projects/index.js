@@ -13,15 +13,56 @@ module.exports.generateProjectSlug = project => {
   return project.name.replace(" ", "");
 };
 
+const tools = {
+  vue: {
+    label: "VueJS",
+    icon: "assets/Tools/vue.png"
+  },
+  node: {
+    label: "NodeJS",
+    icon: "assets/Tools/node.svg"
+  },
+  socketio: {
+    label: "socket.io",
+    icon: "assets/Tools/socketio.svg"
+  },
+  git: {
+    label: "Git",
+    icon: "assets/Tools/git.png"
+  },
+  express: {
+    label: "Express",
+    icon: "assets/Tools/express.png"
+  },
+  mocha: {
+    label: "Mocha",
+    icon: "assets/Tools/mocha.png"
+  },
+  mongodb: {
+    label: "MongoDB",
+    icon: "assets/Tools/mongodb.png"
+  }
+}
+
 module.exports.data = [
   {
     name: "Typist",
+    desc: "Typist is a web-based racing game, where participants race against each other to finish typing a randomly-generated paragraph of text.",
     tags: ["JavaScript", "VueJS", "NodeJS"],
     last_updated: "10th Jan 2020",
     img: [
       "/assets/Typist/image3.png",
       "/assets/Typist/image6.png",
       "/assets/Typist/image9.png"
+    ],
+    tools: [
+      tools.git,
+      tools.vue,
+      tools.node,
+      tools.socketio,
+      tools.express,
+      tools.mongodb,
+      tools.mocha
     ],
     links: [
       {
@@ -33,10 +74,15 @@ module.exports.data = [
   },
   {
     name: "Habitat",
+    desc: "Habitat is a mobile application aimed at providing a communication platform for landlords and tenants to use during a tenancy. This includes managing property maintenance issues, miscellaneous house information, and contacts.",
     tags: ["JavaScript", "Angular8", "NodeJS"],
     last_updated: "23rd Aug 2019",
     img: [
       "/assets/Habitat/image1.png"
+    ],
+    tools: [
+      tools.git,
+      tools.node
     ],
     links: [
       {

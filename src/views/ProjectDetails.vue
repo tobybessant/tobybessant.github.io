@@ -1,28 +1,33 @@
 <template>
-  <div class="app-horizontal-defaults">
+  <div class="app-horizontal-defaults app-vertical-defaults">
     <PageNav />
     <PageHeader text="PROJECTS" subheading="" />
     <div class="back-container">
-      <router-link to="/projects" id="back-button">Back to Projects List</router-link>
+      <router-link 
+        to="/projects"
+        id="back-button"
+      >Back to Projects List</router-link>
     </div>
-    
+
     <div v-if="project" class="project-details">
       <div class="project-details-header">
-        <h3>{{ project.name }}</h3>
-      </div>
-      <div class="meta">
-        <div class="tags">
-          <ProjectTag
-            v-for="(tag, index) in project.tags"
-            :key="index"
-            :tag="tag"
-          />
-        </div>
+        <h2>{{ project.name }}</h2>
         <div class="links">
           <div v-for="(link, index) in project.links" :key="index">
             <a :href="link.url" target="_blank">{{ link.label }}</a>
           </div>
         </div>
+      </div>
+      <div class="meta">
+        <div class="tools">
+          <div v-for="(tool, index) in project.tools" :key="index" class="tool">
+            <img :src="tool.icon" alt="" class="tool-icon" />
+            {{ tool.label }}
+          </div>
+        </div>
+      </div>
+      <div class="description">
+        <p>{{ project.desc }}</p>
       </div>
       <div class="post-body" v-html="project.bodyContent"></div>
     </div>
@@ -35,7 +40,6 @@
 <script>
 import PageNav from "@/components/PageNav.vue";
 import PageHeader from "@/components/PageHeader.vue";
-import ProjectTag from "@/components/ProjectTag.vue";
 
 import projects from "@/data/projects/compiled.json";
 
@@ -43,8 +47,7 @@ export default {
   name: "ProjectDetailsView",
   components: {
     PageNav,
-    PageHeader,
-    ProjectTag
+    PageHeader
   },
   data: function() {
     return {
@@ -56,7 +59,9 @@ export default {
     id: {
       handler: function() {
         this.id = this.$route.params.projectSlug;
-        const projectData = projects.projectsData.filter(p => p.slug === this.id);
+        const projectData = projects.projectsData.filter(
+          p => p.slug === this.id
+        );
         if (projectData[0]) {
           this.project = projectData[0];
         }
@@ -70,6 +75,8 @@ export default {
 <style scoped>
 .project-details-header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .back-container {
@@ -77,7 +84,7 @@ export default {
 }
 
 #back-button {
-  color:black;
+  color: black;
   background: white;
   text-decoration: none;
   padding: 10px 20px;
@@ -86,10 +93,11 @@ export default {
 
 .project-details {
   color: black;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
+  background: rgba(255, 255, 255, 1);
+  padding: 20px 30px;
   border: 1px solid white;
   border-radius: 19px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .meta {
@@ -99,22 +107,36 @@ export default {
   align-items: center;
 }
 
-.tags {
+.tools {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 15px;
+  margin: 30px 0;
+  flex-wrap: wrap;
 }
 
-.tags > div:not(:last-child) {
-  margin-right: 10px;
+.tools > div:not(:last-child) {
+  margin-right: 40px;
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.tool-icon {
+  max-height: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .links a {
   text-decoration: none;
   padding: 5px 10px;
   font-size: 1.2em;
-  background: rgb(255, 255, 255);
+  background: rgb(208, 110, 253);
   border-radius: 9px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   color: #000;

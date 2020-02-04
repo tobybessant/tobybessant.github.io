@@ -1,8 +1,11 @@
-An online typing racing game - where you are pitted against other users in an online battle to see who can type the fastest!
+## Objectives
+* To gain experience developing a full-stack web application.
+* To make effective use of the websocket protocol.
+* To complete the development process whilst following TDD methodology.
+* To gain experience using a CI pipeline
 
-My first formally completed online web app, build with the use of Socket,io, Express, VueJS and more.
-
-Tools Used:
-* VueJS
-* Express
-* NodeJS
+## Outcomes
+* A tested & working full-stack application, using Mocha & Chai.
+* Made use of websockets (socket.io) to transmit live player state updates.
+* Developed express API to interact with a MongoDB database (for use in saving highscores).
+* CI pipeline testing experience using Microsoft Azure Pipelines.

@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     activeStyle: function() {
-      return this.isActive ? { background: 'white', color: 'black' } : null; 
+      return this.isActive ? { background: 'aquamarine', color: 'black' } : null; 
     }
   }
 };
@@ -28,11 +28,12 @@ export default {
 <style scoped>
 .tag {
   padding: 5px 10px;
-  background: rgba(66, 66, 66, 0.6);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 9px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-  color: #fff;
+  color: #363636;
   transition: 0.3s;
+  margin-bottom: 20px;
 }
 
 .tag p {
@@ -42,8 +43,7 @@ export default {
 }
 
 .tag:hover {
-  background: rgba(82, 82, 82, 0.8);
-  color: #fff;
+  background: aquamarine;
   cursor: pointer;
   transition: 0.3s;
 }

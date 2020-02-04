@@ -33,10 +33,6 @@ body {
     #410256,
     #4b0655
   );
-  /* background: linear-gradient(to right top, #0e0537, #74044c, #c33736, #db8f00, #a8eb12); */
-  /* background: linear-gradient(to right top, #395085, #0078ac, #00a0b6, #00c3a1, #87e07e); */
-  /* background-image: linear-gradient(to right top, #31e038, #00e474, #00e6a0, #00e6c3, #34e4da, #00dce6, #00d4ef, #00caf5, #00b7ff, #00a0ff, #0084ff, #625ffb); */
-  /* background-image: linear-gradient(to right top, #09015a, #0a0266, #0c0371, #0d047e, #0d068a, #210489, #2d0288, #370087, #420079, #48006c, #4b0160, #4b0655); */
 }
 
 .svg {
@@ -70,9 +66,20 @@ h3 {
   letter-spacing: 1px;
 }
 
+h4 {
+  font-size: 1.8rem;
+  color: black;
+  margin: 10px 0;
+  padding: 0;
+}
+
 p {
   padding: 0;
   margin: 0 0 16px 0;
+  font-size: 1.5rem;
+}
+
+li {
   font-size: 1.5rem;
 }
 

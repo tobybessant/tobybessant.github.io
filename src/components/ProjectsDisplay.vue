@@ -77,6 +77,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .tags > div:not(:last-child) {

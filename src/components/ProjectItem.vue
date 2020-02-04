@@ -95,6 +95,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 15px;
+  font-size: 0.9rem;
 }
 
 .tags > div:not(:last-child) {
