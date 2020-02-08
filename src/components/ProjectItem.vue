@@ -116,4 +116,11 @@ export default {
   padding: 0;
   margin: 0;
 }
+
+@media (max-width: 550px) {
+  .card {
+    margin: 16px 0;
+    min-width: 300px;
+  }
+}
 </style>

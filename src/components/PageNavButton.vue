@@ -17,17 +17,16 @@ export default {
 
 <style scoped>
 a {
-  color: white;
+  color: grey;
   text-decoration: none;
   font-size: 1.5rem;
   transition: 0.2s;
   position: relative;
   padding: 0 20px;
-  margin-bottom: 20px;
 }
 
 a:hover {
-  color: aquamarine;
+  color: black;
 }
 
 a::before,
@@ -64,7 +63,7 @@ a:hover::after {
 }
 
 a.router-link-active {
-  color: aquamarine;
+  color: black;
 }
 
 a.router-link-active::before,

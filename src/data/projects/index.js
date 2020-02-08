@@ -48,6 +48,7 @@ module.exports.data = [
   {
     name: "Typist",
     desc: "Typist is a web-based racing game, where participants race against each other to finish typing a randomly-generated paragraph of text.",
+    favourite: true,
     tags: ["JavaScript", "VueJS", "NodeJS"],
     last_updated: "10th Jan 2020",
     img: [
@@ -75,6 +76,7 @@ module.exports.data = [
   {
     name: "Habitat",
     desc: "Habitat is a mobile application aimed at providing a communication platform for landlords and tenants to use during a tenancy. This includes managing property maintenance issues, miscellaneous house information, and contacts.",
+    favourite: true,
     tags: ["JavaScript", "Angular8", "NodeJS"],
     last_updated: "23rd Aug 2019",
     img: [
@@ -95,6 +97,7 @@ module.exports.data = [
   {
     name: "Terrain Generation",
     tags: ["C++", "OpenGL"],
+    favourite: true,
     last_updated: "5th Jan 2020",
     img: [
       "/assets/TerrainGeneration/image1.png"

@@ -15,4 +15,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+div {
+  padding: 50px 0;
+  text-align: center;
+}
+</style>

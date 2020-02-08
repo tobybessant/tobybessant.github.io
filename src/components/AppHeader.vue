@@ -18,8 +18,9 @@ export default {
 </script>
 
 <style scoped>
-#app-title {
-	padding-top: 100px;
+.app-heading {
+	margin: 50px 0;
+	text-align: center;
 }
 
 #subheading {

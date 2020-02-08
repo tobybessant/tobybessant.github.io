@@ -19,7 +19,7 @@ export default {
   },
   computed: {
     activeStyle: function() {
-      return this.isActive ? { background: 'aquamarine', color: 'black' } : null; 
+      return this.isActive ? { background: 'aquamarine', color: 'black' } : null;
     }
   }
 };
@@ -33,7 +33,7 @@ export default {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   color: #363636;
   transition: 0.3s;
-  margin-bottom: 20px;
+  margin: 5px 0;
 }
 
 .tag p {

@@ -2,37 +2,49 @@
   <div class="app-horizontal-defaults app-vertical-defaults">
     <PageNav />
     <PageHeader text="PROJECTS" subheading="" />
-    <div class="back-container">
-      <router-link 
-        to="/projects"
-        id="back-button"
-      >Back to Projects List</router-link>
-    </div>
+    <div class="page-content">
+      
 
-    <div v-if="project" class="project-details">
-      <div class="project-details-header">
+      <div class="title-container">
+        <div class="back">
+        <router-link to="/projects" id="back-button">
+          <i class="fa fa-chevron-left"></i>Back
+        </router-link>
+      </div>
         <h2>{{ project.name }}</h2>
-        <div class="links">
-          <div v-for="(link, index) in project.links" :key="index">
-            <a :href="link.url" target="_blank">{{ link.label }}</a>
+      </div>
+
+      <div v-if="project" class="project-details">
+        <div class="project-details-header">
+          <div class="links">
+            <h3>Links</h3>
+            <div v-for="(link, index) in project.links" :key="index" class="link">
+              <a :href="link.url" target="_blank">{{ link.label }}</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="meta">
-        <div class="tools">
-          <div v-for="(tool, index) in project.tools" :key="index" class="tool">
-            <img :src="tool.icon" alt="" class="tool-icon" />
-            {{ tool.label }}
+       
+        <div class="meta">
+          <h3>Tools</h3>
+          <div class="tools">
+            <div
+              v-for="(tool, index) in project.tools"
+              :key="index"
+              class="tool"
+            >
+              <img :src="tool.icon" alt="" class="tool-icon" />
+              {{ tool.label }}
+            </div>
           </div>
         </div>
+        <div class="description">
+          <p>{{ project.desc }}</p>
+        </div>
+        <div class="post-body" v-html="project.bodyContent"></div>
       </div>
-      <div class="description">
-        <p>{{ project.desc }}</p>
+      <div v-if="!project">
+        <PageHeader text="That project does not exist." subheading="" />
       </div>
-      <div class="post-body" v-html="project.bodyContent"></div>
-    </div>
-    <div v-if="!project">
-      <PageHeader text="That project does not exist." subheading="" />
     </div>
   </div>
 </template>
@@ -79,8 +91,26 @@ export default {
   align-items: center;
 }
 
-.back-container {
+.title-container {
   margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title-container h2 {
+  margin-left: 40px;
+  margin-bottom: 0;
+  padding:0;
+}
+
+.back {
+  font-size: 1.3rem;
+}
+
+#back-button > .fa {
+  margin-right: 10px;
 }
 
 #back-button {
@@ -88,7 +118,13 @@ export default {
   background: white;
   text-decoration: none;
   padding: 10px 20px;
-  border-radius: 100px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  transition: 0.3s;
+}
+
+#back-button:hover {
+  background: aquamarine;
 }
 
 .project-details {
@@ -96,22 +132,18 @@ export default {
   background: rgba(255, 255, 255, 1);
   padding: 20px 30px;
   border: 1px solid white;
-  border-radius: 19px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-}
-
-.meta {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11);
+  margin-bottom: 150px;
+  border: 1px solid #909090;
 }
 
 .tools {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 30px 0;
+  margin: 0 0 30px 0;
   flex-wrap: wrap;
 }
 
@@ -132,28 +164,21 @@ export default {
   margin-bottom: 10px;
 }
 
+.links {
+  margin-bottom: 30px;
+}
+
+.link {
+  margin-top: 10px;
+}
+
 .links a {
   text-decoration: none;
   padding: 5px 10px;
   font-size: 1.2em;
-  background: rgb(208, 110, 253);
   border-radius: 9px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   color: #000;
   transition: 0.3s;
-}
-
-.project-carousel {
-  margin: 20px 0;
-}
-
-.slide-content {
-  width: 100%;
-  text-align: center;
-}
-
-.carousel-image {
-  width: 100%;
-  max-width: 500px;
 }
 </style>

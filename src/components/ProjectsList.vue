@@ -60,7 +60,7 @@ export default {
 .projects-list {
   width: auto;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
 }
