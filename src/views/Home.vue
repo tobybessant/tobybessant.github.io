@@ -27,6 +27,7 @@ import SocialLinkSet from "@/components/SocialLinkSet.vue";
 import ProjectItem from "@/components/ProjectItem.vue";
 
 import projects from "@/data/projects/compiled.json";
+const SESSION_STORAGE_KEY = "lastRoute";
 
 export default {
   name: "home",
@@ -43,6 +44,7 @@ export default {
   },
   mounted() {
     this.favouriteProjects = projects.projectsData.filter(p => p.favourite);
+    window.sessionStorage.setItem(SESSION_STORAGE_KEY, null);
   }
 };
 </script>

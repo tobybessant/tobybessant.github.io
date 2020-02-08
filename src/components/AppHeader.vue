@@ -23,6 +23,11 @@ export default {
 	text-align: center;
 }
 
+#app-title {
+	/* color: #40b5c2; */
+	color: #0dd69d;
+}
+
 #subheading {
 	max-width: 900px;
 	margin: 0 auto;

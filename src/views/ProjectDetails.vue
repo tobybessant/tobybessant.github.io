@@ -7,9 +7,9 @@
 
       <div class="title-container">
         <div class="back">
-        <router-link to="/projects" id="back-button">
+        <a @click="navigateBack" id="back-button">
           <i class="fa fa-chevron-left"></i>Back
-        </router-link>
+        </a>
       </div>
         <h2>{{ project.name }}</h2>
       </div>
@@ -55,6 +55,8 @@ import PageHeader from "@/components/PageHeader.vue";
 
 import projects from "@/data/projects/compiled.json";
 
+import { SESSION_STORAGE_KEY } from "@/middleware/logRoute.js";
+
 export default {
   name: "ProjectDetailsView",
   components: {
@@ -66,6 +68,9 @@ export default {
       id: null,
       project: null
     };
+  },
+  mounted() {
+    window.scrollTo(0,0);
   },
   watch: {
     id: {
@@ -79,6 +84,18 @@ export default {
         }
       },
       immediate: true
+    }
+  },
+  methods: {
+    navigateBack: function() {
+      const name = sessionStorage.getItem(SESSION_STORAGE_KEY);
+      console.log(name);
+      if(name !== "null"){
+        console.log("going back to ", name);
+        this.$router.push({ name });
+      } else {
+        this.$router.push("/projects");
+      }
     }
   }
 };
@@ -121,6 +138,7 @@ export default {
   border-radius: 10px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   transition: 0.3s;
+  cursor: pointer;
 }
 
 #back-button:hover {
