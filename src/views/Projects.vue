@@ -2,7 +2,7 @@
   <div class="app-horizontal-defaults app-vertical-defaults projects">
     <PageNav />
     <PageHeader text="PROJECTS" subheading="" />
-    <div class="page-content">
+    <div class="page-content page-style-defaults">
       <ProjectsDisplay :urlQuery="this.query ? this.query : ''" />
     </div>
   </div>

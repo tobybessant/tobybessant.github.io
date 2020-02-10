@@ -105,7 +105,7 @@ export default {
 .tag-all {
   padding-right: 15px;
   margin-right: 15px;
-  border-right: 2px solid #606060;
+  border-right: 2px solid white;
 }
 
 .tags {

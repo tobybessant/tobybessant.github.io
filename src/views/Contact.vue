@@ -1,19 +1,29 @@
 <template>
   <div class="app-horizontal-defaults">
     <PageNav />
-    <PageHeader text="CONTACT" subheading="Looking to get in touch? Check out the options below." />
+    <PageHeader
+      text="CONTACT"
+      subheading="Looking to get in touch? Check out the options below."
+    />
     <div class="page-style-defaults">
       <div class="page-content">
         <div class="email">
           <div>
             <i class="fa fa-envelope"></i>
             <input
+              id="email-copy-field"
+              type="text"
               ref="email"
               class="email-input"
               value="toby.bessant@tobybessant.co.uk"
               readonly="readonly"
+              v-autowidth="{
+                maxWidth: '500px',
+                minWidth: '0px',
+                comfortZone: 0
+              }"
             />
-          </div>
+            </div>
           <button class="copy-button" @click="copyEmailToClipboard">
             <i ref="copyButtonIcon" class="fa fa-clone" aria-hidden="true"></i>
             <span ref="copyButtonText">Copy</span>
@@ -80,16 +90,15 @@ export default {
   font-size: 1.8rem;
   padding: 20px;
   flex-wrap: wrap;
-  border-radius: 9px 9px 0 0;
-  border-bottom: 1px solid black;
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .email-input {
-  color: black;
+  color: white;
   background: none;
   font-size: 2rem;
   margin: 0;
-  width: 500px;
   border: none;
   padding: 0;
   outline: none;
@@ -97,6 +106,7 @@ export default {
 
 .fa-envelope {
   margin-right: 20px;
+  color: white;
 }
 
 .copy-button > .fa-clone,
@@ -157,7 +167,7 @@ button:hover {
     align-items: flex-start;
   }
 
-   .email>div {
+  .email > div {
     width: 100%;
   }
 }

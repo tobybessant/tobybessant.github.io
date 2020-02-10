@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 a {
-  color: grey;
+  color: #909090;
   text-decoration: none;
   font-size: 1.5rem;
   transition: 0.2s;

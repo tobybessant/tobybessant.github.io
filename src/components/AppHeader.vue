@@ -1,6 +1,6 @@
 <template>
   <div class="app-heading">
-    <h1 id="app-title" class="white">TOBY BESSANT</h1>
+    <h1 id="app-title" class="">TOBY BESSANT</h1>
     <div id="subheading">
       <p>
         A motivated final year student studying Computer Science & Games

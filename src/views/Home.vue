@@ -2,7 +2,7 @@
   <div>
     <PageNav />
     <AppHeader />
-    <div class="page-content">
+    <div class="page-content page-style-defaults">
       <div class="showcase">
         <h2>Showcase</h2>
         <div class="showcase-projects">
@@ -63,6 +63,13 @@ export default {
 .showcase {
   margin-top: 130px;
   text-align: center;
+  background: whitesmoke;
+  color: #434343;
+  border-radius: 19px;
+  padding: 20px 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
+    0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
 }
 
 .showcase-projects {

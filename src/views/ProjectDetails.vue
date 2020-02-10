@@ -2,7 +2,7 @@
   <div class="app-horizontal-defaults app-vertical-defaults">
     <PageNav />
     <PageHeader text="PROJECTS" subheading="" />
-    <div class="page-content">
+    <div class="page-content page-style-defaults">
       <div class="title-container">
         <div class="back">
           <a @click="navigateBack" id="back-button">
