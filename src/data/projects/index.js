@@ -16,31 +16,39 @@ module.exports.generateProjectSlug = project => {
 const tools = {
   vue: {
     label: "VueJS",
-    icon: "assets/Tools/vue.png"
+    icon: "/assets/Tools/vue.png"
   },
   node: {
     label: "NodeJS",
-    icon: "assets/Tools/node.svg"
+    icon: "/assets/Tools/node.svg"
   },
   socketio: {
     label: "socket.io",
-    icon: "assets/Tools/socketio.svg"
+    icon: "/assets/Tools/socketio.svg"
   },
   git: {
     label: "Git",
-    icon: "assets/Tools/git.png"
+    icon: "/assets/Tools/git.png"
   },
   express: {
     label: "Express",
-    icon: "assets/Tools/express.png"
+    icon: "/assets/Tools/express.png"
   },
   mocha: {
     label: "Mocha",
-    icon: "assets/Tools/mocha.png"
+    icon: "/assets/Tools/mocha.png"
   },
   mongodb: {
     label: "MongoDB",
-    icon: "assets/Tools/mongodb.png"
+    icon: "/assets/Tools/mongodb.png"
+  },
+  ionic: {
+    label: "Ionic",
+    icon: "/assets/Tools/ionic.png"
+  },
+  cordova: {
+    label: "Cordova",
+    icon: "/assets/Tools/cordova.png"
   }
 }
 
@@ -84,7 +92,9 @@ module.exports.data = [
     ],
     tools: [
       tools.git,
-      tools.node
+      tools.node,
+      tools.ionic,
+      tools.cordova
     ],
     links: [
       {

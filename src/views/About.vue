@@ -36,7 +36,7 @@
           I have also been exposed to a wide range of disciplines, in a
           multitide of langauges and environments. From experience-based
           projects developed in Unity3D; to core C# & Java software
-          development; to C++ & GPU programming; to NodeJS & full stack web
+          development; to unmanaged C++ & GPU programming; to NodeJS & full stack web
           development.
         </p>
         <br />

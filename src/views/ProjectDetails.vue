@@ -3,14 +3,12 @@
     <PageNav />
     <PageHeader text="PROJECTS" subheading="" />
     <div class="page-content">
-      
-
       <div class="title-container">
         <div class="back">
-        <a @click="navigateBack" id="back-button">
-          <i class="fa fa-chevron-left"></i>Back
-        </a>
-      </div>
+          <a @click="navigateBack" id="back-button">
+            <i class="fa fa-chevron-left"></i>Back
+          </a>
+        </div>
         <h2>{{ project.name }}</h2>
       </div>
 
@@ -18,14 +16,23 @@
         <div class="project-details-header">
           <div class="links">
             <h3>Links</h3>
-            <div v-for="(link, index) in project.links" :key="index" class="link">
+            <div
+              v-for="(link, index) in project.links"
+              :key="index"
+              class="link"
+            >
               <a :href="link.url" target="_blank">{{ link.label }}</a>
             </div>
           </div>
         </div>
-       
+
+        <div class="gallery-container">
+          <VueGallery :imgArray="project.img" />
+        </div>
+
         <div class="meta">
           <h3>Tools</h3>
+
           <div class="tools">
             <div
               v-for="(tool, index) in project.tools"
@@ -37,11 +44,13 @@
             </div>
           </div>
         </div>
+
         <div class="description">
           <p>{{ project.desc }}</p>
         </div>
         <div class="post-body" v-html="project.bodyContent"></div>
       </div>
+
       <div v-if="!project">
         <PageHeader text="That project does not exist." subheading="" />
       </div>
@@ -52,6 +61,7 @@
 <script>
 import PageNav from "@/components/PageNav.vue";
 import PageHeader from "@/components/PageHeader.vue";
+import VueGallery from "@/components/VueGallery.vue";
 
 import projects from "@/data/projects/compiled.json";
 
@@ -61,7 +71,8 @@ export default {
   name: "ProjectDetailsView",
   components: {
     PageNav,
-    PageHeader
+    PageHeader,
+    VueGallery
   },
   data: function() {
     return {
@@ -70,7 +81,7 @@ export default {
     };
   },
   mounted() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   },
   watch: {
     id: {
@@ -89,9 +100,7 @@ export default {
   methods: {
     navigateBack: function() {
       const name = sessionStorage.getItem(SESSION_STORAGE_KEY);
-      console.log(name);
-      if(name !== "null"){
-        console.log("going back to ", name);
+      if (name !== "null") {
         this.$router.push({ name });
       } else {
         this.$router.push("/projects");
@@ -119,7 +128,7 @@ export default {
 .title-container h2 {
   margin-left: 40px;
   margin-bottom: 0;
-  padding:0;
+  padding: 0;
 }
 
 .back {
@@ -157,7 +166,18 @@ export default {
   border: 1px solid #909090;
 }
 
+.gallery-container {
+  display: block;
+}
+
+.meta{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .tools {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
