@@ -1,5 +1,6 @@
 # Skills Developed 
 - Front end development, using VueJS to produce a client-side application.
+- SASS css to style reusable components.
 - Custom compile scripts to load project details content into html for rendering.
 
 # Additional Comments

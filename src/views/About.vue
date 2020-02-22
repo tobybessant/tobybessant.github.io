@@ -166,13 +166,14 @@ export default {
     0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
 }
 
-@media (max-width: 99x0px) {
+@media (max-width: 990px) {
   .top-details {
     flex-direction: row-reverse;
     margin-bottom: 40px;
   }
 
   .fact-grid {
+    margin-top: 20px;
     flex-direction: column;
     align-items: flex-start;
   }

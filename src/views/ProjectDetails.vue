@@ -13,7 +13,7 @@
       </div>
 
       <div v-if="project" class="project-details">
-        <p>Project last updated on {{ project.last_updated }}</p>
+        <p class="last-updated">Project last updated on {{ project.last_updated }}</p>
         <div class="project-details-header">
           <div class="links">
             <h3>Links</h3>
@@ -167,6 +167,14 @@ export default {
     0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11);
   margin-bottom: 150px;
   border: 1px solid #909090;
+}
+
+.last-updated {
+  color: gray;
+}
+
+.links h3 {
+  margin-top: 0;
 }
 
 .gallery-container {

@@ -150,6 +150,10 @@ module.exports.data = [
     ],
     links: [
       {
+        label: "GitHub",
+        url: "https://github.com/ebrisoft/frontend"
+      },
+      {
         label: "Release Website",
         url: "https://habitat.ebrisoft.com"
       }
@@ -189,9 +193,19 @@ module.exports.data = [
   {
     name: "Portfolio Site",
     tags: ["VueJS", "NodeJS", "JavaScript"],
-    last_updated: "20th Feb 2020",
+    last_updated: "22nd Feb 2020",
     img: [
       "/assets/PortfolioSite/homepage.png"
+    ],
+    tools: [
+      tools.git,
+      tools.vue,
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/tobybessant/tobybessant.github.io"
+      }
     ],
     bodyPath: "posts/portfoliosite.md"
   },
@@ -221,7 +235,7 @@ module.exports.data = [
   {
     name: "Keycard System",
     tags: ["Java", "OOP"],
-    last_updated: "5th Sep 2019",
+    last_updated: "4th Dec 2018",
     img: [
       "https://www.tobybessant.co.uk/images/portfolioimages/university-room-system-img1.png"
     ],
@@ -241,7 +255,7 @@ module.exports.data = [
   {
     name: "The Birthday",
     tags: ["C#", "Unity3D"],
-    last_updated: "16th Aug 2018",
+    last_updated: "15th Jan 2018",
     img: [
       "/assets/TheBirthday/image.png"
     ],
