@@ -2,6 +2,7 @@
   <div>
     <PageNav />
     <AppHeader />
+    <HomeNav />
     <div class="page-content page-style-defaults">
       <div class="showcase">
         <h2>Showcase</h2>
@@ -19,9 +20,8 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import AppHeader from "@/components/AppHeader.vue";
-// import HomeNav from "@/components/HomeNav.vue";
+import HomeNav from "@/components/HomeNav.vue";
 import PageNav from "@/components/PageNav.vue";
 import SocialLinkSet from "@/components/SocialLinkSet.vue";
 import ProjectItem from "@/components/ProjectItem.vue";
@@ -34,6 +34,7 @@ export default {
   components: {
     PageNav,
     AppHeader,
+    HomeNav,
     ProjectItem,
     SocialLinkSet
   },

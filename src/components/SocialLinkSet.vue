@@ -15,7 +15,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .link-icons {
   width: 100%;
   text-align: center;
@@ -25,7 +25,7 @@ export default {
   display: inline-block;
   font-size: 36px;
   text-decoration: none;  
-  color: #202020;
+  color: whitesmoke;
   margin: 0 24px 15px 0;
 }
 </style>

@@ -27,30 +27,11 @@ export default {
       }
 
       return this.projects.filter(p => this.projectDoesMatch(p));
-    },
-    searchQuery: function() {
-      return this.filter.trim().split(",");
-    },
-    containsQueriesRegex: function() {
-      let regex = "";
-      this.searchQuery.forEach(filter => {
-        regex += "(?=.*" + filter.trim().replace("+", "\\+") + ")";
-      });
-
-      regex += ".*$";
-      return regex;
     }
   },
   methods: {
     projectDoesMatch: function(project) {
-      let r = new RegExp(this.containsQueriesRegex, "gi")
-      return this.nameContains(project, r) || this.tagsContain(project, r)
-    },
-    nameContains: function(project, regex) {
-      return regex.test(project.name.toLowerCase());
-    },
-    tagsContain: function(project, regex) {
-      return regex.test(project.tags.toString());
+      return project.tags.includes(this.filter);
     }
   }
 };

@@ -1,16 +1,11 @@
-## Objectives
-* To gain experience developing a native mobile application using web technologies.
-* To turn an initial app idea into a working prototype.
-* To make use of TypeScript & Angular8 to develop a maintainable codebase.
-* To be effective in my role as design lead, within a team of 3.
+## Skills Developed
 
-## Outcomes
-* A solid prototype for an app idea that could potentially be taken to market.
-* An effective team project that used agile methodologies to set and assign weekly tasks.
-* Contributions to the team in leading, guiding and advising design decisions.
-* Developed an effective build pipeline to produce a native application using web technologies.
+- Working with web technologies to produce a native mobile application.
+- Designing and developing an abstract API layer to produce maintainable code.
+- Building early AdobeXD prototypes for the idea.
+- Front-end development through implementing API service classes, components, and views.
+- Working in a small team, using agile and scrum to set, prioritise, and assign weekly tasks.
 
-## Problems
-|         | Situation | Task | Action | Result | 
-| ------- | --------- | ---- | ------ | ------ |
-| 1       | Cordova plugins required the application to actually be built to the phone  | To enable browser simulation to speed up development | build an abstract HTTP service to switch out implementation at build time. | Rapid development could take place using axios and Chrome mobile simiulation.
+## Additional Comments
+
+This project was a great opportunity to collaboratively try out some new technology that my colleagues and I were raring to get our teeth into. The backend was built by my colleague using ASP.NET Core, Entity Framework, and SQLServer. We built the front end using Angular8 & TypeScript, Ionic, and Cordova, to enable easy cross-platform deployment of the application. I thoroughly enjoyed working on this application, because it allowed me to utilise my web-development knowledge in a different context for a different platform. It was also my first experience using TypeScript, and using a more complex build pipeline to support multiple platforms.

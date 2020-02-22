@@ -42,12 +42,6 @@
             faIcon="fa-github"
             gradientColour="grey"
           />
-          <ContactPlatform
-            name="Twitter"
-            url="#"
-            faIcon="fa-twitter"
-            gradientColour="#00aced"
-          />
         </div>
       </div>
     </div>
@@ -87,6 +81,8 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
   font-size: 1.8rem;
   padding: 20px;
   flex-wrap: wrap;
@@ -141,11 +137,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.contact-options > a:not(:last-child) {
-  margin-right: 40px;
+  margin: 40px;
 }
 
 @media (max-width: 850px) {

@@ -25,6 +25,12 @@ for (let project of projectsData) {
     project.bodyContent = converter.makeHtml(raw.toString());
     project.slug = projects.generateProjectSlug(project);
 
+    // sort tags
+    if(project.tags !== undefined) {
+      const sortedTags = project.tags.sort();
+      project.tags = sortedTags;
+    }
+
     // check available tags
     for(tag of project.tags) {
       if(!availableTags.includes(tag)) availableTags.push(tag);

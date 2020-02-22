@@ -23,7 +23,7 @@ export default {
 }
 
 #app-title {
-  font-size: 5.5em;
+  font-size: 5em;
 	font-weight: 700;
 	margin-bottom: 30px;
 }

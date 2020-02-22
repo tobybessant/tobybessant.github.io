@@ -14,6 +14,7 @@
     </div>
     <div class="container">
       <h3>{{ project.name }}</h3>
+      <p class="last-updated">{{ project.last_updated }}</p>
       <div class="tags">
         <div class="tag" v-for="(tag, index) in project.tags" :key="index">
           <p>{{ tag }}</p>
@@ -37,13 +38,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../globalstyles";
+
 .card {
   flex: 1;
   width: 350px;
   min-width: 350px;
   max-width: 350px;
-  height: 320px;
+  height: 340px;
   background: #fff;
   color: #3f3d56;
   display: flex;
@@ -88,6 +91,19 @@ export default {
   justify-content: space-evenly;
   align-items: flex-start;
   height: 100%;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: $fontColour;
+  margin: 3px 0 0px 0;
+  padding: 0;
+}
+
+.last-updated {
+  color: grey;
+  margin: 0 0 5px 0;
+  padding:0;
 }
 
 .tags {

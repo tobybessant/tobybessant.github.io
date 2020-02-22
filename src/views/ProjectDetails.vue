@@ -9,10 +9,11 @@
             <i class="fa fa-chevron-left"></i>Back
           </a>
         </div>
-        <h2>{{ project.name }}</h2>
+        <h2 id="project-title">{{ project.name }}</h2>
       </div>
 
       <div v-if="project" class="project-details">
+        <p>Project last updated on {{ project.last_updated }}</p>
         <div class="project-details-header">
           <div class="links">
             <h3>Links</h3>
@@ -110,7 +111,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .project-details-header {
   display: flex;
   justify-content: space-between;
@@ -129,10 +130,12 @@ export default {
   margin-left: 40px;
   margin-bottom: 0;
   padding: 0;
+  text-align: left;
 }
 
 .back {
   font-size: 1.3rem;
+  min-width: 120px;
 }
 
 #back-button > .fa {
@@ -170,7 +173,7 @@ export default {
   display: block;
 }
 
-.meta{
+.meta {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -194,7 +197,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .tool-icon {
@@ -208,6 +211,11 @@ export default {
 
 .link {
   margin-top: 10px;
+  display: inline-block;
+}
+
+.link a:hover {
+  background: aquamarine;
 }
 
 .links a {
@@ -218,5 +226,17 @@ export default {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   color: #000;
   transition: 0.3s;
+  margin-right: 10px;
+}
+@media (max-width: 600px) {
+  .title-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #project-title {
+    margin-left: 10px;
+    margin-top: 20px;
+  } 
 }
 </style>

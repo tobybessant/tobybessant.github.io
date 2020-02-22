@@ -1,12 +1,9 @@
 <template>
   <a :href="url" target="_blank">
-    <div class="platform" :style="gradientColourVariable">
+    <div class="platform">
       <div class="name">
         <i class="fa" :class="faIcon"></i>
         <h4>{{ name }}</h4>
-      </div>
-      <div class="external-icon">
-        <i class="fa fa-external-link" aria-hidden="true"></i>
       </div>
     </div>
   </a>
@@ -20,11 +17,6 @@ export default {
     faIcon: String,
     url: String,
     gradientColour: String
-  },
-  computed: {
-    gradientColourVariable: function() {
-      return { "--gradient-colour": this.gradientColour };
-    }
   }
 };
 </script>
@@ -32,21 +24,19 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .platform {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
-  min-width: 340px;
-  max-width: 340px;
+  width: 240px;
   color: black;
   background: white;
-  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 9px;
   padding: 20px 10px;
   transition: 0.5s;
@@ -57,47 +47,31 @@ a {
   transform: scale(1.08);
   cursor: pointer;
   transition: 0.5s;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
+    0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
+}
+
+.platform h4 {
+  color: #434343;
 }
 
 .name {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
 .fa {
   padding: 20px;
-  font-size: 3rem;
+  font-size: 5rem;
   color: black;
 }
 
 .fa-external-link {
   font-size: 1.5rem;
   text-align: right;
-}
-
-.platform::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient(
-    to right,
-    var(--gradient-colour),
-    white,
-    white
-  );
-  z-index: -1;
-  transition: opacity 0.5s linear;
-  opacity: 0;
-  border-radius: 9px;
-}
-
-.platform:hover::before {
-  opacity: 1;
 }
 
 @media (max-width: 500px) {

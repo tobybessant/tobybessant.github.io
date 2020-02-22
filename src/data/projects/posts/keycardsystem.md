@@ -1,12 +1,12 @@
-An application intended to manage room access on a virtual university campus. A software development assignment designed to test my abilities in object orientated application development and use of design patterns (Java). I am proud to say that I recieved 86% for this project. It helped me understand and utilise object orientated programming principles such as SOLID, and design patters such as the observer pattern, and state pattern.
+An application developed to manage room access on a virtual university campus. Supports different roles that need to access rooms at different times, in addition to an 'Emergency' mode that changes the room access states.
 
 # Skills Developed
-* Object Oriented Programming
-* Design Patterns
-* Test Driven Development
-* Planning & Design of Software
 
-# Tools Used
-* Netbeans 8 IDE
-* JAVA 8
-* GitHub
+- Object Oriented Programming
+- Design Patterns
+- Test Driven Development
+- Planning & Design of Software
+
+# Additional Comments
+
+I am proud to say that I recieved 86% for this project. This project allowed me to understand the value of object orientated programming principles such as SOLID, and design patterns such as the observer pattern to communicate state updates, and the strategy pattern to change implementation at run time. I wrote unit tests for this project, however in the last year I can look back and say that my unit testing knowledge and process has improved greatly since this project.

@@ -1,7 +1,9 @@
 <template>
-  <div class="home-nav-button" @click="clicked()">
-    <span class="button-label">{{ label }}</span>
-  </div>
+  <a target="_target" :href="this.location">
+    <div class="home-nav-button">
+      <span class="button-label">{{ label }}</span>
+    </div>
+  </a>
 </template>
 
 <script>
@@ -20,6 +22,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
+
 .home-nav-button {
   padding: 15px 38px;
   background: white;
@@ -32,9 +38,7 @@ export default {
 .home-nav-button:hover {
   cursor: pointer;
   transform: scale(1.03);
-  box-shadow: 
-    0 3px 5px -4px #03eeb7, 
-    0 8px 10px -2px #50e7c4;
+  box-shadow: 0 3px 5px -4px #03eeb7, 0 8px 10px -2px #50e7c4;
   color: black;
   transition: 0.3s;
 }
