@@ -63,6 +63,7 @@ export default {
 
 #subheading {
   max-width: 900px;
+	width: 80%;
   margin: 0 auto;
 }
 </style>

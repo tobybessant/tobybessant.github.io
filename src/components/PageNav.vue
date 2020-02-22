@@ -50,4 +50,11 @@ export default {
 .site-title {
   position: relative;
 }
+
+@media screen and (max-width: 440px) {
+  .nav-buttons a {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
 </style>
