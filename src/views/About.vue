@@ -26,7 +26,7 @@
         <div class="body">
           <p>
             Hi there. I am an avid developer currently studying
-            <strong>Computer Science & Games Development Bsc (Hons)</strong> at
+            <strong>Computing & Games Development Bsc (Hons)</strong> at
             The University of Plymouth. I am due to graduate in June 2020! 🎉
           </p>
           <br />

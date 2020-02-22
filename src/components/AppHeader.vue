@@ -3,7 +3,7 @@
     <h1 id="app-title" class="">TOBY BESSANT</h1>
     <div id="subheading">
       <p>
-        A motivated final year student studying Computer Science & Games
+        A motivated final year student studying Computing & Games
         Development at Plymouth University, graduating in June 2020.
       </p>
     </div>
