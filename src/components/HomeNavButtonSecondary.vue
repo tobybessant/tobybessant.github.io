@@ -1,7 +1,9 @@
 <template>
-  <div class="home-nav-button" @click="clicked()">
-    <span class="button-label">{{ label }}</span>
-  </div>
+  <a target="_target" :href="this.location">
+    <div class="home-nav-button">
+      <span class="button-label">{{ label }}</span>
+    </div>
+  </a>
 </template>
 
 <script>
@@ -20,6 +22,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
+
 .home-nav-button {
   padding: 15px 38px;
   background: none;

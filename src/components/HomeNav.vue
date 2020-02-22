@@ -1,7 +1,7 @@
 <template>
   <div class="home-nav">
     <HomeNavButtonPrimary location="https://github.com/tobybessant" label="GitHub" />
-    <HomeNavButtonSecondary location="projects" label="My CV" />
+    <HomeNavButtonSecondary location="https://tobybessant.github.io/CV/Toby%20Bessant%20CV.pdf" label="My CV" />
   </div>
 </template>
 
