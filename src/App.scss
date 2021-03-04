@@ -1,0 +1,26 @@
+@import "sass/variables";
+
+.app {
+  background: $background-color;
+  color: $text-color;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2em;
+}
+
+.App-link {
+  color: $link-color;
+  background-color: $link-color-background;
+
+  &:hover {
+    color: $link-color-hover;
+    background-color: $link-color-backround-hover;
+  }
+}
