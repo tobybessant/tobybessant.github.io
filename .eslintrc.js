@@ -18,7 +18,8 @@ module.exports = {
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
-    indent: ["warn", 2]
+    indent: ["warn", 2],
+    linebreakStyles: 0
   },
   settings: {
     react: {
