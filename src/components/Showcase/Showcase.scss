@@ -1,0 +1,7 @@
+.showcase-items {
+  display: flex;
+
+  & > .showcase-item:not(:last-child) {
+    margin-right: 20px;
+  }
+}

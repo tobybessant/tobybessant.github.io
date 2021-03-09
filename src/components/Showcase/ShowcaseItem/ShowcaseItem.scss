@@ -1,0 +1,29 @@
+@import "src/sass/variables";
+.showcase-item {
+  border: 1px solid #ccc;
+  width: 250px;
+  height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  transition: box-shadow 0.25s;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 4px rgb(160, 160, 160);
+  }
+
+  .item-img {
+    flex: 1;
+  }
+
+  .item-title {
+    height: 50px;
+    padding: 5px 10px;
+    border-top: 1px solid grey;
+    font-family: "Fira Code", monospace;
+    font-size: 0.8em;
+  }
+}
