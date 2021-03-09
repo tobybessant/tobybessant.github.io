@@ -1,11 +1,11 @@
 import "./App.scss";
 import Landing from "./components/Landing/Landing";
-import Nav from "./components/Nav/Nav";
+import Header from "./components/Header/Header";
 
 function App(): JSX.Element {
   return (
     <div className="app">
-      <Nav />
+      <Header />
       <Landing />
     </div>
   );
