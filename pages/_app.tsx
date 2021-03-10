@@ -1,6 +1,7 @@
-import "../styles/globals.css";
+import "../src/styles/App.scss";
+import "../src/styles/Fonts.scss"
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component , pageProps }) {
   return <Component {...pageProps} />;
 }
 

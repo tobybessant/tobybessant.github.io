@@ -3,7 +3,7 @@ interface IShowcaseItemProps {
   imageSrc?: string;
 }
 
-import "./ShowcaseItem.scss";
+// import "./ShowcaseItem.scss";
 
 export default function ShowcaseItem(props: IShowcaseItemProps): JSX.Element {
   return (

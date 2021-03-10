@@ -1,10 +1,10 @@
+import * as styles from "./Landing.module.scss";
 import Showcase from "../Showcase/Showcase";
-import "./Landing.scss";
 
 function Landing(): JSX.Element {
   return (
-    <div className="landing">
-      <div className="intro">
+    <div className={styles.landing}>
+      <div className={styles.intro}>
         <h1>Hello! 👋</h1>
         <p>
           My name is <b>Toby</b>, I&apos;m a Software Engineer based in London.
