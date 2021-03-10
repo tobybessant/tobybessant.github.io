@@ -1,5 +1,4 @@
 import * as styles from "./Landing.module.scss";
-import Showcase from "../Showcase/Showcase";
 
 function Landing(): JSX.Element {
   return (
@@ -19,7 +18,6 @@ function Landing(): JSX.Element {
           ut labore et dolore magna aliqua.
         </p>
       </div>
-      <Showcase />
     </div>
   );
 }
