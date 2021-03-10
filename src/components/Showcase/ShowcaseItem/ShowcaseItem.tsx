@@ -1,4 +1,4 @@
-import * as styles from "./ShowcaseItem.module.scss";
+import styles from "./ShowcaseItem.module.scss";
 import { IShowcaseItemProps } from "./ShowcaseItem.props";
 
 export default function ShowcaseItem(props: IShowcaseItemProps): JSX.Element {

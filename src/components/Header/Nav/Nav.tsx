@@ -1,4 +1,4 @@
-import * as styles from "./Nav.module.scss";
+import styles from "./Nav.module.scss";
 
 export default function Nav(): JSX.Element {
   return (

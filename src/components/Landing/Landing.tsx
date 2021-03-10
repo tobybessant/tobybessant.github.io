@@ -1,4 +1,4 @@
-import * as styles from "./Landing.module.scss";
+import styles from "./Landing.module.scss";
 
 function Landing(): JSX.Element {
   return (

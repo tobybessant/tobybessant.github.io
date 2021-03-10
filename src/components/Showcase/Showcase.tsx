@@ -1,4 +1,4 @@
-import * as styles from "./Showcase.module.scss";
+import styles from "./Showcase.module.scss";
 import ShowcaseItem from "./ShowcaseItem/ShowcaseItem";
 import { IShowcaseProps } from "./Showcase.props";
 
