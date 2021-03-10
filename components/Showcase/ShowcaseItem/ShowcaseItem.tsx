@@ -10,5 +10,6 @@ export default function ShowcaseItem(props: IShowcaseItemProps): JSX.Element {
     <div className="showcase-item">
       <div className="item-img"></div>
       <div className="item-title">{props.title}</div>
-    </div>);
+    </div>
+  );
 }
