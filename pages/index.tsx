@@ -6,7 +6,6 @@ import { GetStaticProps } from "next";
 import { IHomeProps } from "../src/types/Home.props";
 
 import projects from "../data/projects";
-import Test from "../src/components/Test/Test";
 
 export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
   return {
@@ -23,7 +22,6 @@ export default function Home({ favouriteProjects }: IHomeProps) {
       </Head>
       <Header />
       <Landing />
-      <Test />
       <Showcase projects={favouriteProjects} />
     </div>
   );

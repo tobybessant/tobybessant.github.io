@@ -1,12 +1,10 @@
-.Showcase-Item {
+.showcaseItem {
   border: 1px solid #ccc;
   width: 250px;
   height: 220px;
-
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
   transition: box-shadow 0.25s;
 
   &:hover {
@@ -14,11 +12,11 @@
     box-shadow: 0 0 4px rgb(160, 160, 160);
   }
 
-  .item-img {
+  .itemImg {
     flex: 1;
   }
 
-  .item-title {
+  .itemTitle {
     height: 50px;
     padding: 5px 10px;
     border-top: 1px solid grey;
