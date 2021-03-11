@@ -1,16 +1,16 @@
-FROM node:current-alpine AS app
-WORKDIR /app
+FROM node:14 AS base
+WORKDIR /base
 COPY package*.json ./
 RUN npm install
 COPY . .
 
-FROM app AS build
+FROM base AS build
 ENV NODE_ENV=production
 WORKDIR /build
-COPY --from=app /app ./
+COPY --from=base /base ./
 RUN npm run build
 
-FROM node:current-alpine AS production
+FROM node:14-alpine AS production
 ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=build /build/package*.json ./

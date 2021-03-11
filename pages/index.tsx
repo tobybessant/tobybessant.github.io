@@ -4,7 +4,6 @@ import Header from "../src/components/Header/Header";
 import Showcase from "../src/components/Showcase/Showcase";
 import { GetStaticProps } from "next";
 import { IHomeProps } from "../src/types/Home.props";
-
 import projects from "../data/projects";
 
 export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
