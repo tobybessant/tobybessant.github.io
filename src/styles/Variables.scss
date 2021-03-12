@@ -8,6 +8,13 @@ $h3-color: #8455e2;
 /* Links */
 $link-text-color: #211a1d;
 $link-text-color-hover: #6320ee;
+
+$link-background-color: rgba(220, 217, 255, 0.714);
+$link-background-color-hover: rgba(190, 184, 255, 0.9);
+
+$link-border-bottom-color: 0.1em solid rgba(0, 0, 0, 0.075);
+$link-border-bottom-color-hover: rgba(0, 0, 0, 0.5);
+
 $nav-link-underline-color: rgba(0, 0, 0, 0.075);
 $nav-link-underline-color-hover: #8175ffb6;
 $nav-link-underline-box-shadow-color-hover: #8175ffb6;

@@ -6,12 +6,15 @@ function Landing(): JSX.Element {
       <div className={styles.intro}>
         <h1>Hello! 👋</h1>
         <p>
-          My name is <b>Toby</b>, I&apos;m a Software Engineer based in London.
+          My name is <b>Toby</b>, I&apos;m a developer based in London.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          I have a burning passion for all things web development, currently working as a Sofware
+          Engineer at{" "}
+          <a href="https://www.greenmangaming.com" target="_blank">
+            Green Man Gaming
+          </a>
+          .
         </p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
