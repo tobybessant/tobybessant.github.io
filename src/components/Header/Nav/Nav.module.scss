@@ -2,7 +2,7 @@
 
 .nav {
   display: inline;
-  font-size: 1.5em;
+  font-size: 1.6em;
 
   & > a {
     margin-right: 30px;
@@ -11,7 +11,7 @@
     &::after {
       content: "";
       position: absolute;
-      height: 5px;
+      height: 4px;
       bottom: -7px;
 
       margin: 0 auto;
