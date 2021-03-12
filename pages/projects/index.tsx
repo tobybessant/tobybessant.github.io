@@ -10,7 +10,5 @@ export const getStaticProps: GetStaticProps<IProjectPageProps> = async () => {
 };
 
 export default function Projects({ projects }: IProjectPageProps) {
-  return projects.map((p: any) => (
-      <Link href="projects/{p.slug}"><a>{p.slug}</a></Link>
-    ))};
+  return <div>{projects.toString()}</div>;
 }

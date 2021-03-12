@@ -1,8 +1,31 @@
+@import "../../../styles/Variables.scss";
+
 .nav {
   display: inline;
   font-size: 1.5em;
 
   & > a {
     margin-right: 30px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      bottom: -7px;
+
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.075);
+
+      transition: 0.15s;
+    }
+
+    &:hover::after {
+      background: $nav-link-underline-color-hover;
+      box-shadow: 0 0 5px $nav-link-underline-box-shadow-color-hover;
+    }
   }
 }

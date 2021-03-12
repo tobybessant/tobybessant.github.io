@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Nav(): JSX.Element {
   return (
     <div className={styles.nav}>
-      <Link href="/">
+      <Link className="underline" href="/">
         <a>Toby Bessant</a>
       </Link>
       <Link href="/projects">

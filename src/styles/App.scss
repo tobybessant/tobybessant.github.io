@@ -34,14 +34,20 @@ code {
 }
 
 a {
-  color: $link-color;
-  border-bottom: 0.2em solid rgba(0, 0, 0, 0.075);
+  color: $link-text-color;
   text-decoration: none;
 
   &:hover,
   &:active {
-    // border-color: rgba(0, 0, 0, 0.3);
-    border-color: #8175ffb6;
-    color: $link-color-hover;
+    color: $link-text-color-hover;
   }
+}
+
+h1 {
+  font-size: 1.7em;
+  color: $h1-color;
+}
+
+h2 {
+  color: $h3-color;
 }

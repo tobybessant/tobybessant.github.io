@@ -3,11 +3,11 @@ $background-color: #ffffff;
 /* Text */
 $text-color: #211a1d;
 $h1-color: #6320ee;
-$emphasis-color: #8075ff;
+$h3-color: #8455e2;
 
 /* Links */
-$link-color: #211a1d;
-$link-color-background: #ebe3f8;
-
-$link-color-hover: #6320ee;
-$link-color-backround-hover: #e0d4f5;
+$link-text-color: #211a1d;
+$link-text-color-hover: #6320ee;
+$nav-link-underline-color: rgba(0, 0, 0, 0.075);
+$nav-link-underline-color-hover: #8175ffb6;
+$nav-link-underline-box-shadow-color-hover: #8175ffb6;
