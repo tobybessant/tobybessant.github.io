@@ -10,8 +10,8 @@ export default function Nav(): JSX.Element {
       <Link href="/projects">
         <a>Projects</a>
       </Link>
-      <a href="/">Contact</a>
-      <a href="/">CV</a>
+      <a href="/contact">Contact</a>
+      <a href="/CV">CV</a>
     </div>
   );
 }

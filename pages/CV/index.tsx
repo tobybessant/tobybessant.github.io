@@ -1,11 +1,7 @@
-import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import Header from "../../src/components/Header/Header";
 
-export default function Project() {
-  const router = useRouter();
-  const { slug } = router.query;
-
+export default function Contact() {
   return (
     <div className="app">
       <Head>
@@ -13,7 +9,6 @@ export default function Project() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div>{slug} !</div>
     </div>
   );
 }
