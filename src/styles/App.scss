@@ -40,6 +40,8 @@ a {
 
   &:hover,
   &:active {
-    border-color: rgba(0, 0, 0, 0.3);
+    // border-color: rgba(0, 0, 0, 0.3);
+    border-color: #8175ffb6;
+    color: $link-color-hover;
   }
 }

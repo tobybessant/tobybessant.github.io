@@ -1,4 +1,5 @@
+import { IProject } from "../../../types/project.interface";
+
 export interface IShowcaseItemProps {
-  title: string;
-  imageSrc?: string;
+  project: IProject;
 }

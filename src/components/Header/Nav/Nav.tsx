@@ -1,10 +1,15 @@
 import styles from "./Nav.module.scss";
+import Link from "next/link";
 
 export default function Nav(): JSX.Element {
   return (
     <div className={styles.nav}>
-      <a href="/">Toby Bessant</a>
-      <a href="/">Projects</a>
+      <Link href="/">
+        <a>Toby Bessant</a>
+      </Link>
+      <Link href="/projects">
+        <a>Projects</a>
+      </Link>
       <a href="/">Contact</a>
       <a href="/">CV</a>
     </div>

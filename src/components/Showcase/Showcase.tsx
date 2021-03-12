@@ -8,7 +8,7 @@ export default function Showcase({ projects }: IShowcaseProps): JSX.Element {
       <h3>Some of my favourite projects...</h3>
       <div className={styles.showcaseItems}>
         {projects.map(i => (
-          <ShowcaseItem title={i.title} key={i.title} />
+          <ShowcaseItem project={i} key={i.title} />
         ))}
       </div>
     </div>

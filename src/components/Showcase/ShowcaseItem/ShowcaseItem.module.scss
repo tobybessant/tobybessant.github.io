@@ -16,11 +16,21 @@
     flex: 1;
   }
 
-  .itemTitle {
+  .itemText {
     height: 50px;
     padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     border-top: 1px solid grey;
     font-family: "Fira Code", monospace;
-    font-size: 0.8em;
+
+    .itemTitle {
+      font-size: 0.8em;
+    }
+
+    .itemTags {
+      font-size: 0.7em;
+    }
   }
 }
