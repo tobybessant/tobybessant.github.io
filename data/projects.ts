@@ -1,26 +1,28 @@
 import { IProject } from "../src/types/project.interface";
 
+const IMG_ROOT: string = "/img/";
+
 const projects: IProject[] = [
   {
     title: "Pilot UAT",
-    imageSrc: "saucy",
+    imageSrc: IMG_ROOT + "terrain-generation-1.png",
     favourite: true,
     tags: ["SPA", "Angular", "TypeScript"],
-    slug: "1"
+    slug: "pilot-uat"
   },
   {
     title: "PCG Terrain Generation",
-    imageSrc: "saucy",
+    imageSrc: IMG_ROOT + "terrain-generation-1.png",
     favourite: true,
     tags: ["C++", "PCG"],
-    slug: "2"
+    slug: "pcg-terrain-generation"
   },
   {
     title: "Typist",
-    imageSrc: "saucy",
+    imageSrc: IMG_ROOT + "typist-1.png",
     favourite: true,
     tags: ["VueJS", "JavaScript"],
-    slug: "3"
+    slug: "typist"
   }
 ];
 

@@ -1,35 +1,55 @@
 @import "../../../styles/Variables.scss";
 
 .showcaseItem {
-  border: 1px solid $primary-black-2;
+  border: 1px solid $primary-black-3;
   width: 400px;
   height: 250px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   transition: 0.25s;
+  position: relative;
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 4px rgb(160, 160, 160);
-    border: 1px solid $primary-purple-2;
   }
 
-  .itemImg {
+  &::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    bottom: -10px;
+
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: $nav-link-underline-color;
+
+    transition: 0.15s;
+  }
+
+  &:hover::after {
+    background: $nav-link-underline-color-hover;
+    box-shadow: 0 0 5px $nav-link-underline-box-shadow-color-hover;
+  }
+
+  .itemImgContainer {
     flex: 1;
   }
 
   .itemText {
-    height: 50px;
+    min-height: 50px;
     padding: 5px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border-top: 1px solid grey;
+    border-top: 1px solid $primary-black-3;
     font-family: "Fira Code", monospace;
 
     .itemTitle {
       font-size: 1em;
+      font-weight: 700;
     }
 
     .itemTags {

@@ -5,7 +5,7 @@ import { IShowcaseProps } from "./Showcase.props";
 export default function Showcase({ projects }: IShowcaseProps): JSX.Element {
   return (
     <div>
-      <h2>Some of my favourite projects...</h2>
+      <h2>Project Showcase</h2>
       <div className={styles.showcaseItems}>
         {projects.map(i => (
           <ShowcaseItem project={i} key={i.title} />

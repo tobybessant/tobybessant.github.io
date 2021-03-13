@@ -1,4 +1,4 @@
-export const itemImg: string;
+export const itemImgContainer: string;
 export const itemTags: string;
 export const itemText: string;
 export const itemTitle: string;
