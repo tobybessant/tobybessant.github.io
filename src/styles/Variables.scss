@@ -1,20 +1,24 @@
 $background-color: #ffffff;
 
+$primary-black-1: #211a1d;
+$primary-black-2: #50454b;
+$primary-black-3: rgba(0, 0, 0, 0.25);
+
+$primary-purple-1: #6320ee;
+$primary-purple-2: #8175ffb6;
+
 /* Text */
-$text-color: #211a1d;
-$h1-color: #6320ee;
-$h3-color: #8455e2;
+$text-color: $primary-black-1;
+$h1-color: $primary-purple-1;
+$h3-color: $primary-black-2;
 
 /* Links */
-$link-text-color: #211a1d;
-$link-text-color-hover: #6320ee;
+$link-text-color: $text-color;
+$link-text-color-hover: $text-color;
 
-$link-background-color: rgba(220, 217, 255, 0.714);
-$link-background-color-hover: rgba(190, 184, 255, 0.9);
+$link-border-bottom-color: $primary-black-3;
+$link-border-bottom-color-hover: $primary-purple-2;
 
-$link-border-bottom-color: 0.1em solid rgba(0, 0, 0, 0.075);
-$link-border-bottom-color-hover: rgba(0, 0, 0, 0.5);
-
-$nav-link-underline-color: rgba(0, 0, 0, 0.075);
-$nav-link-underline-color-hover: #8175ffb6;
-$nav-link-underline-box-shadow-color-hover: #8175ffb6;
+$nav-link-underline-color: $primary-black-3;
+$nav-link-underline-color-hover: $primary-purple-2;
+$nav-link-underline-box-shadow-color-hover: $primary-purple-2;

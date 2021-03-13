@@ -7,7 +7,7 @@ export default function ShowcaseItem(props: IShowcaseItemProps): JSX.Element {
       <div className={styles.itemImg}></div>
       <div className={styles.itemText}>
         <div className={styles.itemTitle}>{props.project.title}</div>
-        <div className={styles.itemTags}>{props.project.tags.join(",")}</div>
+        <div className={styles.itemTags}>{props.project.tags.join(", ")}</div>
       </div>
     </div>
   );

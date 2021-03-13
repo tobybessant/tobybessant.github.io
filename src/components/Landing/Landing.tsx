@@ -9,16 +9,17 @@ function Landing(): JSX.Element {
           My name is <b>Toby</b>, I&apos;m a developer based in London.
         </p>
         <p>
-          I have a burning passion for all things web development, currently working as a Sofware
-          Engineer at{" "}
+          I have a burning passion for all things web development, i like it lots - currently
+          working as a Sofware Engineer at{" "}
           <a href="https://www.greenmangaming.com" target="_blank">
             Green Man Gaming
           </a>
           .
         </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua.
+          Outside of programming, I enjoy cycling and playing guitar. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua.
         </p>
       </div>
     </div>

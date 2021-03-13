@@ -29,20 +29,17 @@ code {
   max-width: 1400px;
   margin: 0 auto;
   padding: 50px;
-
-  // background: rgba(0, 0, 0, 0.1);
 }
 
 a {
   color: $link-text-color;
   text-decoration: none;
-  border-bottom: 0.1em solid rgba(0, 0, 0, 0.075);
-  background-color: $link-background-color;
+  border-bottom: 0.1em solid $link-border-bottom-color;
 
   &:hover,
   &:active {
     color: $link-text-color-hover;
-    background-color: $link-background-color-hover;
+    border-bottom: 0.1em solid $link-border-bottom-color-hover;
   }
 }
 
