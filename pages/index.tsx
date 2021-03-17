@@ -16,8 +16,10 @@ export default function Home({ favouriteProjects }: IHomeProps) {
   return (
     <div className="app">
       <Head>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <title>Toby Bessant | Software Developer</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta charSet="utf-8"></meta>
       </Head>
       <Header />
       <Landing />
