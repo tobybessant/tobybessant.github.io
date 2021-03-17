@@ -2,38 +2,61 @@ import Head from "next/head";
 import Header from "../../src/components/Header/Header";
 import { readdirSync } from "fs";
 import { resolve } from "path";
-import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from "next";
-import { ParsedUrlQuery } from "node:querystring";
+import {
+  GetStaticPaths,
+  GetStaticPathsResult,
+  GetStaticProps,
+  GetStaticPropsResult,
+  NextPage
+} from "next";
+import { Md } from "../../src/types/MD";
 
-interface Props extends ParsedUrlQuery {
-  slug: string;
+interface IProps {
+  attributes: IProjectAttributes;
+  html: string;
+}
+interface IProjectAttributes {
+  title: string;
+  date: string;
 }
 
-export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsResult<Props>> => {
+export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsResult> => {
   const fileNames: string[] = readdirSync(resolve("content/_projects"));
-  const paths: { params: Props }[] = fileNames.map(name => ({
+  const paths = fileNames.map(name => ({
     params: { slug: name.substr(0, name.indexOf(".")) }
   }));
 
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // dynamically import file contents here
+export const getStaticProps: GetStaticProps<IProps> = async ({
+  params
+}): Promise<GetStaticPropsResult<IProps>> => {
+  if (!params?.slug) {
+    return { notFound: true };
+  }
+
+  const content: Md<IProjectAttributes> = await import(
+    `../../content/_projects/${params.slug}.md`
+  ).catch(() => null);
+
   return {
-    props: { slug: params?.slug ?? null }
+    props: { attributes: content.attributes, html: content.html }
   };
 };
 
-export default function Project({ slug }: any) {
+const Project: NextPage<IProps> = ({ attributes, html }) => {
   return (
     <div className="app">
       <Head>
-        <title>Toby Bessant | Software Developer | CV</title>
+        <title>Toby Bessant | Software Developer | {attributes.title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div>{slug} !</div>
+      <div>{attributes.title} !</div>
+      <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </div>
   );
-}
+};
+
+export default Project;
