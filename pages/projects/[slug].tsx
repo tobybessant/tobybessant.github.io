@@ -53,7 +53,7 @@ const Project: NextPage<IProps> = ({ attributes, html }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div>{attributes.title} !</div>
+      <h1>{attributes.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </div>
   );
