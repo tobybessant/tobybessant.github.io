@@ -11,6 +11,7 @@
     "scss:watch": "tsm src/components --aliasPrefixes.~ node_modules/ --watch"
   },
   "dependencies": {
+    "netlify-cms-app": "^2.14.29",
     "next": "10.0.8",
     "react": "17.0.1",
     "react-dom": "17.0.1",
