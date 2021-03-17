@@ -4,7 +4,7 @@ date: 2021-03-17T22:22:47.043Z
 ---
 Typist is a web-based racing game, where participants race against each other to finish typing a randomly-generated paragraph of text.
 
-#### Skills Developed
+## Skills Developed
 
 * Full-stack web application development.
 * Use of websockets to enable real-time data updates.
