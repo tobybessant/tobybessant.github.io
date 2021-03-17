@@ -1,4 +1,10 @@
-export default {
+import { CmsConfig } from "netlify-cms-core";
+
+interface NetlifyCmsConfig extends CmsConfig {
+  cms_manual_init?: boolean;
+}
+
+export const config: NetlifyCmsConfig = {
   cms_manual_init: true,
   backend: {
     name: "github",
