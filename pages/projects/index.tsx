@@ -5,7 +5,6 @@ import React from "react";
 import { IProject } from "../../src/types/project.interface";
 import { readdirSync } from "fs";
 import { resolve } from "path";
-import { IProjectAttributes } from "../../src/types/project-attributes.interface";
 import { Md } from "../../src/types/md.type";
 import ProjectsList from "../../src/components/ProjectsList/ProjectsList";
 
@@ -18,14 +17,14 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
   const projects: IProject[] = [];
 
-  for (const fileName in fileNames) {
-    const content: Md<IProjectAttributes> = await import(
-      `../../content/_projects/${fileName}.md`
-    ).catch(() => null);
+  for (const fileName of fileNames) {
+    const content: Md<IProject> = await import(`../../content/_projects/${fileName}`).catch(
+      () => null
+    );
 
     if (content) {
       projects.push({
-        slug: fileName,
+        slug: fileName.substr(0, fileName.indexOf(".")),
         title: content.attributes.title,
         tags: content.attributes.tags ?? [],
         favourite: !!content.attributes.favourite,

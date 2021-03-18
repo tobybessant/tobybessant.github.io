@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IProject } from "../../../types/project.interface";
 import styles from "./ProjectItem.module.scss";
 
@@ -7,10 +8,11 @@ type Props = {
 
 const ProjectItem = ({ project }: Props): JSX.Element => {
   return (
-    <div>
-      <h2>Project Showcase</h2>
-      <div className={styles.projectItem}></div>
-    </div>
+    <Link href={`/projects/${project.slug}`}>
+      <div className={styles.projectItem}>
+        <h4>{project.title}</h4>
+      </div>
+    </Link>
   );
 };
 

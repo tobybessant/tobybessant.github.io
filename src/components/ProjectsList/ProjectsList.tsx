@@ -11,7 +11,7 @@ const ProjectsList = ({ projects }: Props): JSX.Element => {
     <div>
       <div className={styles.projectsList}>
         {projects.map(i => (
-          <ProjectItem project={i} key={i.title} />
+          <ProjectItem project={i} key={i.slug} />
         ))}
       </div>
     </div>

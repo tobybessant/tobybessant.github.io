@@ -38,15 +38,15 @@ code {
 
   min-height: 100vh;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 50px;
 
   @media (max-width: $breakpoint-tablet) {
-    padding: 25px;
+    padding: 40px;
   }
 
-  @media (max-width: $breakpoint-tablet) {
+  @media (max-width: $breakpoint-mobile) {
     padding: 15px;
   }
 }

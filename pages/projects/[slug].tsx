@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "../../src/components/Header/Header";
 import { readdirSync } from "fs";
 import { resolve } from "path";
-import { IProjectAttributes } from "../../src/types/project-attributes.interface";
+import { IProject } from "../../src/types/project.interface";
 import { Md } from "../../src/types/md.type";
 import {
   GetStaticPaths,
@@ -13,7 +13,7 @@ import {
 } from "next";
 
 type Props = {
-  attributes: IProjectAttributes;
+  project: IProject;
   html: string;
 };
 
@@ -33,16 +33,16 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     return { notFound: true };
   }
 
-  const content: Md<IProjectAttributes> = await import(
-    `../../content/_projects/${params.slug}.md`
-  ).catch(() => null);
+  const content: Md<IProject> = await import(`../../content/_projects/${params.slug}.md`).catch(
+    () => null
+  );
 
   return {
-    props: { attributes: content.attributes, html: content.html }
+    props: { project: content.attributes, html: content.html }
   };
 };
 
-const Project: NextPage<Props> = ({ attributes, html }) => {
+const Project: NextPage<Props> = ({ project: attributes, html }) => {
   return (
     <div className="app">
       <Head>
