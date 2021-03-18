@@ -7,6 +7,7 @@ import { readdirSync } from "fs";
 import { resolve } from "path";
 import { IProjectAttributes } from "../../src/types/project-attributes.interface";
 import { Md } from "../../src/types/md.type";
+import ProjectsList from "../../src/components/ProjectsList/ProjectsList";
 
 type Props = {
   projects: IProject[];
@@ -14,8 +15,6 @@ type Props = {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const fileNames: string[] = readdirSync(resolve("content/_projects"));
-
-  console.log(fileNames);
 
   const projects: IProject[] = [];
 
@@ -48,7 +47,7 @@ const Projects: NextPage<Props> = ({ projects }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Projects projects={projects} />
+      <ProjectsList projects={projects} />
     </div>
   );
 };
