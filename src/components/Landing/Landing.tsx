@@ -1,6 +1,6 @@
 import styles from "./Landing.module.scss";
 
-function Landing(): JSX.Element {
+const Landing = (): JSX.Element => {
   return (
     <div className={styles.landing}>
       <div className={styles.intro}>
@@ -24,5 +24,6 @@ function Landing(): JSX.Element {
       </div>
     </div>
   );
-}
+};
+
 export default Landing;

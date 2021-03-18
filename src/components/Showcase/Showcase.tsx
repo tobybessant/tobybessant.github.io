@@ -1,8 +1,12 @@
+import { IProject } from "../../types/project.interface";
 import styles from "./Showcase.module.scss";
 import ShowcaseItem from "./ShowcaseItem/ShowcaseItem";
-import { IShowcaseProps } from "./Showcase.props";
 
-export default function Showcase({ projects }: IShowcaseProps): JSX.Element {
+type Props = {
+  projects: IProject[];
+};
+
+const Showcase = ({ projects }: Props): JSX.Element => {
   return (
     <div>
       <h2>Project Showcase</h2>
@@ -13,4 +17,6 @@ export default function Showcase({ projects }: IShowcaseProps): JSX.Element {
       </div>
     </div>
   );
-}
+};
+
+export default Showcase;

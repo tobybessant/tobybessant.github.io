@@ -3,16 +3,20 @@ import Landing from "../src/components/Landing/Landing";
 import Header from "../src/components/Header/Header";
 import Showcase from "../src/components/Showcase/Showcase";
 import { GetStaticProps } from "next";
-import { IHomeProps } from "../src/types/Home.props";
 import projects from "../data/projects";
+import { IProject } from "../src/types/project.interface";
 
-export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
+interface IIndexProps {
+  favouriteProjects: IProject[];
+}
+
+export const getStaticProps: GetStaticProps<IIndexProps> = async () => {
   return {
     props: { favouriteProjects: projects.filter(p => p.favourite) }
   };
 };
 
-export default function Home({ favouriteProjects }: IHomeProps) {
+export default function Home({ favouriteProjects }: IIndexProps) {
   return (
     <div className="app">
       <Head>

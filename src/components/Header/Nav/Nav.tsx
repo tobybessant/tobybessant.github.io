@@ -1,7 +1,7 @@
 import styles from "./Nav.module.scss";
 import Link from "next/link";
 
-export default function Nav(): JSX.Element {
+const Nav = (): JSX.Element => {
   return (
     <div className={styles.nav}>
       <Link href="/">
@@ -18,4 +18,6 @@ export default function Nav(): JSX.Element {
       </Link>
     </div>
   );
-}
+};
+
+export default Nav;

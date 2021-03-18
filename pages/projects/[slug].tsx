@@ -2,6 +2,8 @@ import Head from "next/head";
 import Header from "../../src/components/Header/Header";
 import { readdirSync } from "fs";
 import { resolve } from "path";
+import { IProjectAttributes } from "../../src/types/project-attributes.interface";
+import { Md } from "../../src/types/md.type";
 import {
   GetStaticPaths,
   GetStaticPathsResult,
@@ -9,16 +11,11 @@ import {
   GetStaticPropsResult,
   NextPage
 } from "next";
-import { Md } from "../../src/types/MD";
 
-interface IProps {
+type Props = {
   attributes: IProjectAttributes;
   html: string;
-}
-interface IProjectAttributes {
-  title: string;
-  date: string;
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsResult> => {
   const fileNames: string[] = readdirSync(resolve("content/_projects"));
@@ -29,9 +26,9 @@ export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsRe
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<IProps> = async ({
+export const getStaticProps: GetStaticProps<Props> = async ({
   params
-}): Promise<GetStaticPropsResult<IProps>> => {
+}): Promise<GetStaticPropsResult<Props>> => {
   if (!params?.slug) {
     return { notFound: true };
   }
@@ -45,7 +42,7 @@ export const getStaticProps: GetStaticProps<IProps> = async ({
   };
 };
 
-const Project: NextPage<IProps> = ({ attributes, html }) => {
+const Project: NextPage<Props> = ({ attributes, html }) => {
   return (
     <div className="app">
       <Head>

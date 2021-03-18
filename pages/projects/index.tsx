@@ -1,18 +1,46 @@
-import { GetStaticProps } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Header from "../../src/components/Header/Header";
-import projects from "../../data/projects";
-import { IProjectPageProps } from "../../src/types/Projects.props";
 import React from "react";
-import ShowcaseItem from "../../src/components/Showcase/ShowcaseItem/ShowcaseItem";
+import { IProject } from "../../src/types/project.interface";
+import { readdirSync } from "fs";
+import { resolve } from "path";
+import { IProjectAttributes } from "../../src/types/project-attributes.interface";
+import { Md } from "../../src/types/md.type";
 
-export const getStaticProps: GetStaticProps<IProjectPageProps> = async () => {
+type Props = {
+  projects: IProject[];
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const fileNames: string[] = readdirSync(resolve("content/_projects"));
+
+  console.log(fileNames);
+
+  const projects: IProject[] = [];
+
+  for (const fileName in fileNames) {
+    const content: Md<IProjectAttributes> = await import(
+      `../../content/_projects/${fileName}.md`
+    ).catch(() => null);
+
+    if (content) {
+      projects.push({
+        slug: fileName,
+        title: content.attributes.title,
+        tags: content.attributes.tags ?? [],
+        favourite: !!content.attributes.favourite,
+        imageSrc: ""
+      });
+    }
+  }
+
   return {
     props: { projects: projects }
   };
 };
 
-export default function Projects({ projects }: IProjectPageProps) {
+const Projects: NextPage<Props> = ({ projects }: Props) => {
   return (
     <div className="app">
       <Head>
@@ -20,9 +48,9 @@ export default function Projects({ projects }: IProjectPageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      {projects.map(i => (
-        <ShowcaseItem project={i} key={i.title} />
-      ))}
+      <Projects projects={projects} />
     </div>
   );
-}
+};
+
+export default Projects;

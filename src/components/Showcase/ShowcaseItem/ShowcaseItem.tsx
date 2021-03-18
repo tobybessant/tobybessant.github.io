@@ -1,9 +1,13 @@
 import styles from "./ShowcaseItem.module.scss";
-import { IShowcaseItemProps } from "./ShowcaseItem.props";
 import { useRouter } from "next/router";
 import { MouseEventHandler } from "react";
+import { IProject } from "../../../types/project.interface";
 
-export default function ShowcaseItem(props: IShowcaseItemProps): JSX.Element {
+type Props = {
+  project: IProject;
+};
+
+const ShowcaseItem = (props: Props): JSX.Element => {
   const router = useRouter();
 
   const openProject: MouseEventHandler<HTMLDivElement> = (): void => {
@@ -22,4 +26,6 @@ export default function ShowcaseItem(props: IShowcaseItemProps): JSX.Element {
       </div>
     </div>
   );
-}
+};
+
+export default ShowcaseItem;
