@@ -1,6 +1,10 @@
 ---
 title: Typist
 date: 2021-03-17T22:22:47.043Z
+favourite: false
+tags:
+  - VueJS
+  - SPA
 ---
 Typist is a web-based racing game, where participants race against each other to finish typing a randomly-generated paragraph of text.
 
