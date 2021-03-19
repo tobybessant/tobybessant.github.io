@@ -23,14 +23,22 @@ export const config: NetlifyCmsConfig = {
       fields: [
         { label: "Title", name: "title", widget: "string" },
         { label: "Publish Date", name: "date", widget: "datetime" },
-        { label: "Body", name: "body", widget: "markdown" },
         { label: "Favourite", name: "favourite", widget: "boolean" },
+        { label: "Featured Image", name: "hero_image", widget: "image" },
+        { label: "Body", name: "body", widget: "markdown" },
         {
           label: "Tags",
           name: "tags",
           widget: "list",
           label_singular: "Tag",
           field: { label: "Tag text", name: "tag_text", widget: "string" }
+        },
+        {
+          label: "Extra Images",
+          name: "images",
+          widget: "list",
+          label_singular: "Image",
+          field: { label: "Image", name: "image", widget: "image" }
         }
       ]
     }

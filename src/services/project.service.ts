@@ -8,12 +8,12 @@ export class ProjectService {
   }
 
   public static async getProjectByFileName(fileName: string): Promise<IProject> {
-    const content: Md<IProject> = await FileService.readMarkdown("project", fileName);
+    const content: Md<IProject> = await FileService.readContent("project", fileName);
     return content.attributes;
   }
 
   public static async loadProjectContent(slug: string): Promise<Md<IProject>> {
-    return FileService.readMarkdown("project", `${slug}.md`);
+    return FileService.readContent("project", `${slug}.md`);
   }
 
   public static async getProjects(): Promise<IProject[]> {

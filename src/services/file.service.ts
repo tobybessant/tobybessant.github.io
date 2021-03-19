@@ -16,7 +16,7 @@ export class FileService {
     });
   }
 
-  public static async readMarkdown<T>(type: ContentType, fileName: string): Promise<Md<T>> {
+  public static async readContent<T>(type: ContentType, fileName: string): Promise<Md<T>> {
     const content: Md<T> = await contentModuleFactory<T>(type, fileName);
     return { attributes: content?.attributes, html: content?.html };
   }
