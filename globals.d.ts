@@ -1,5 +1,5 @@
-// declare module "*.md" {
-//   const attributes: { [key: string]: string | string[] | {}[] };
-//   const react: React.FC<attributes>;
-//   export { attributes, react };
-// }
+declare module "*.md" {
+  const attributes: { [key: string]: string | string[] | {}[] };
+  const html: string;
+  export { attributes, html };
+}
