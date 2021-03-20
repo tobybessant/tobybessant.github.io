@@ -42,15 +42,18 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   };
 };
 
-const Project: NextPage<Props> = ({ project: attributes, html }) => {
+const Project: NextPage<Props> = ({ project, html }) => {
   return (
     <div className="app">
       <Head>
-        <title>Toby Bessant | Software Developer | {attributes.title}</title>
+        <title>Toby Bessant | Software Developer | {project.title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <h1>{attributes.title}</h1>
+      <h1>{project.title}</h1>
+      <div
+        style={{ backgroundImage: "url(" + project.hero_image + ")", backgroundSize: "cover" }}
+      ></div>
       <div dangerouslySetInnerHTML={{ __html: html }}></div>
     </div>
   );

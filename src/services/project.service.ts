@@ -47,7 +47,7 @@ export class ProjectService {
       title: project.title ?? null,
       slug: fileName.substr(0, fileName.indexOf(".")),
       favourite: !!project.favourite,
-      imageSrc: project.imageSrc ?? null,
+      hero_image: project.hero_image ?? "",
       tags: project.tags ?? []
     };
   }

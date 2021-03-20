@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         title: content.attributes.title,
         tags: content.attributes.tags ?? [],
         favourite: !!content.attributes.favourite,
-        imageSrc: ""
+        hero_image: content.attributes.hero_image ?? ""
       });
     }
   }

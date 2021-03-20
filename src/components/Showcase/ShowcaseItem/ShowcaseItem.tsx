@@ -18,7 +18,10 @@ const ShowcaseItem = (props: Props): JSX.Element => {
     <div className={styles.showcaseItem} onClick={openProject}>
       <div
         className={styles.itemImgContainer}
-        style={{ backgroundImage: "url(" + props.project.imageSrc + ")", backgroundSize: "cover" }}
+        style={{
+          backgroundImage: "url(" + props.project.hero_image + ")",
+          backgroundSize: "cover"
+        }}
       ></div>
       <div className={styles.itemText}>
         <div className={styles.itemTitle}>{props.project.title}</div>
