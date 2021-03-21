@@ -2,6 +2,7 @@
 title: Typist
 date: 2021-03-17T22:22:47.043Z
 favourite: false
+hero_image: img/typist-1.png
 tags:
   - VueJS
   - SPA

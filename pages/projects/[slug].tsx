@@ -11,6 +11,7 @@ import {
   GetStaticPropsResult,
   NextPage
 } from "next";
+import { ProjectService } from "../../src/services/project.service";
 
 type Props = {
   project: IProject;
@@ -18,9 +19,8 @@ type Props = {
 };
 
 export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsResult> => {
-  const fileNames: string[] = readdirSync(resolve("content/_projects"));
-  const paths = fileNames.map(name => ({
-    params: { slug: name.substr(0, name.indexOf(".")) }
+  const paths = (await ProjectService.getProjects()).map(project => ({
+    params: { slug: project.slug }
   }));
 
   return { paths, fallback: false };
@@ -33,9 +33,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({
     return { notFound: true };
   }
 
-  const content: Md<IProject> = await import(`../../content/_projects/${params.slug}.md`).catch(
-    () => null
-  );
+  const content: Md<IProject> = await ProjectService.loadProjectContent(params.slug as string);
 
   return {
     props: { project: content.attributes, html: content.html }

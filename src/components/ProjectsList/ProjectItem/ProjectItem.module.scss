@@ -1,8 +1,11 @@
 @import "../../../styles/Variables.scss";
 
 .projectItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  height: 80px;
+  height: 100px;
   padding: 15px;
   border: 1px solid $primary-black-3;
   transition: 0.25s;
@@ -20,7 +23,26 @@
   h4 {
     margin: 0;
     font-size: 1em;
-    font-weight: 700;
     font-family: "Fira Code";
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .tags {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .tag {
+      background-color: $primary-purple-4;
+      color: $primary-purple-tag;
+      border: 1px solid $primary-purple-2;
+      border-radius: 50px;
+      padding: 3px 10px;
+      margin: 0 3px;
+      font-size: 0.7em;
+    }
   }
 }

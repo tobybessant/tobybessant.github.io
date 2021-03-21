@@ -11,6 +11,12 @@ const ProjectItem = ({ project }: Props): JSX.Element => {
     <Link href={`/projects/${project.slug}`}>
       <div className={styles.projectItem}>
         <h4>{project.title}</h4>
+        <p>I am the description for the project, perhaps a one line intro.</p>
+        <div className={styles.tags}>
+          {project.tags.map(t => (
+            <div className={styles.tag}>{t}</div>
+          ))}
+        </div>
       </div>
     </Link>
   );

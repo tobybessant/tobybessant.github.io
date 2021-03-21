@@ -3,35 +3,15 @@ import Head from "next/head";
 import Header from "../../src/components/Header/Header";
 import React from "react";
 import { IProject } from "../../src/types/project.interface";
-import { readdirSync } from "fs";
-import { resolve } from "path";
-import { Md } from "../../src/types/md.type";
 import ProjectsList from "../../src/components/ProjectsList/ProjectsList";
+import { ProjectService } from "../../src/services/project.service";
 
 type Props = {
   projects: IProject[];
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const fileNames: string[] = readdirSync(resolve("content/_projects"));
-
-  const projects: IProject[] = [];
-
-  for (const fileName of fileNames) {
-    const content: Md<IProject> = await import(`../../content/_projects/${fileName}`).catch(
-      () => null
-    );
-
-    if (content) {
-      projects.push({
-        slug: fileName.substr(0, fileName.indexOf(".")),
-        title: content.attributes.title,
-        tags: content.attributes.tags ?? [],
-        favourite: !!content.attributes.favourite,
-        hero_image: content.attributes.hero_image ?? ""
-      });
-    }
-  }
+  const projects: IProject[] = await ProjectService.getProjects();
 
   return {
     props: { projects: projects }
