@@ -8,7 +8,8 @@
     "start": "next start",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "scss": "tsm src/components --aliasPrefixes.~ node_modules/",
-    "scss:watch": "tsm src/components --aliasPrefixes.~ node_modules/ --watch"
+    "scss:watch": "tsm src/components --aliasPrefixes.~ node_modules/ --watch",
+    "cms": "npx netlify-cms-proxy-server"
   },
   "dependencies": {
     "netlify-cms-app": "^2.14.29",

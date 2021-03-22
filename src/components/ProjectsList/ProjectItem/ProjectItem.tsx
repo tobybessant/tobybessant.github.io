@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { IProject } from "../../../types/project.interface";
+import Tag from "../../Shared/Tag/Tag";
 import styles from "./ProjectItem.module.scss";
 
 type Props = {
@@ -14,7 +15,7 @@ const ProjectItem = ({ project }: Props): JSX.Element => {
         <p>I am the description for the project, perhaps a one line intro.</p>
         <div className={styles.tags}>
           {project.tags.map(t => (
-            <div className={styles.tag}>{t}</div>
+            <Tag tagLabel={t} />
           ))}
         </div>
       </div>

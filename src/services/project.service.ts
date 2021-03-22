@@ -30,16 +30,7 @@ export class ProjectService {
   }
 
   public static async getFavouriteProjects(): Promise<IProject[]> {
-    const fileNames = await FileService.readDir("content/_projects");
-
-    const projects: IProject[] = [];
-
-    for (const fileName of fileNames) {
-      const project = await this.getProjectByFileName(fileName);
-      projects.push(this.initialiseProject(fileName, project));
-    }
-
-    return projects;
+    return (await this.getProjects()).filter(p => p.favourite);
   }
 
   private static initialiseProject(fileName: string, project: IProject): IProject {

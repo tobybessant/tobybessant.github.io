@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Header from "../../src/components/Header/Header";
-import { readdirSync } from "fs";
-import { resolve } from "path";
 import { IProject } from "../../src/types/project.interface";
 import { Md } from "../../src/types/md.type";
 import {
@@ -12,6 +10,7 @@ import {
   NextPage
 } from "next";
 import { ProjectService } from "../../src/services/project.service";
+import ImageBanner from "../../src/components/Shared/ImageBanner/ImageBanner";
 
 type Props = {
   project: IProject;
@@ -48,6 +47,7 @@ const Project: NextPage<Props> = ({ project, html }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <ImageBanner imageSource={"/" + project.hero_image} width="100%" height="200px" />
       <h1>{project.title}</h1>
       <div
         style={{ backgroundImage: "url(" + project.hero_image + ")", backgroundSize: "cover" }}

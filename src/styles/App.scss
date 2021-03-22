@@ -20,12 +20,14 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  // font-family: "Montserrat";
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: "Fira Code", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 * {
@@ -66,8 +68,10 @@ a {
 h1 {
   font-size: 1.7em;
   color: $h1-color;
+  font-family: "Lato";
 }
 
 h2 {
   color: $h3-color;
+  font-family: "Lato";
 }
