@@ -3,4 +3,3 @@ languageCode = "en-gb"
 title = "Toby Bessant | Software Engineer"
 
 disableKinds = ["taxonomy", "term"]
-ignoreFiles = ["README\\.md"]
