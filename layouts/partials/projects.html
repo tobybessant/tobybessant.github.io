@@ -1,0 +1,30 @@
+{{ $p := site.Data.projects }}
+{{ if $p.enabled }}
+<section class="section">
+  <span id="projects" class="section-anchor"></span>
+  <h2 class="section-heading">{{ $p.heading }}</h2>
+  {{ if $p.subheading }}<span class="subheading">{{ $p.subheading }}</span>{{ end }}
+
+  {{ $entries := sort $p.entries "order" }}
+  {{ range $entries }}
+  <div class="project-entry">
+    <div class="project-heading">
+      <a class="project-name" href="{{ .titleLink }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+      <div class="project-links">
+        {{ range .links }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="icon-link">
+            {{- with resources.Get (printf "svg/%s.svg" .featherIconKey) }}{{ .Content | safeHTML }}{{ end }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
+    <div class="prose">{{ .description | markdownify }}</div>
+    <div class="tags">
+      {{ range .keyTechnologies }}
+        <span>{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</section>
+{{ end }}

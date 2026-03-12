@@ -1,0 +1,26 @@
+{{ $l := site.Data.landing }}
+
+<div class="hero">
+  <div class="profile-img">
+    <img src="{{ $l.profileImage }}" alt="{{ $l.heading }}" />
+  </div>
+  <div class="text-container">
+    <div class="text">
+      <h1>{{ $l.heading }}</h1>
+      <h2>{{ $l.subheading }}</h2>
+      <span class="location">{{ $l.location }}</span>
+    </div>
+    <div class="links">
+      {{ if $l.showCvButton }}
+        <div class="cv">
+          <a href="/cv.pdf" target="_blank">Open CV</a>
+        </div>
+      {{ end }}
+      {{ range $l.links }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="icon-link">
+          {{- with resources.Get (printf "svg/%s.svg" .featherIconKey) }}{{ .Content | safeHTML }}{{ end }}
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</div>

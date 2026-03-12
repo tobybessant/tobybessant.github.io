@@ -1,0 +1,23 @@
+{{ $e := site.Data.experience }}
+{{ if $e.enabled }}
+<section class="section">
+  <span id="experience" class="section-anchor"></span>
+  <h2 class="section-heading">{{ $e.heading }}</h2>
+  {{ if $e.subheading }}<span class="subheading">{{ $e.subheading }}</span>{{ end }}
+
+  {{ $entries := sort $e.entries "order" }}
+  {{ range $entries }}
+  <div class="xp-entry {{ if .activeRole }}active{{ end }}">
+    <div class="xp-dot"></div>
+    <div class="xp-body">
+      <div class="xp-header">
+        <span class="xp-company">{{ .companyName }}</span>
+        <span class="xp-date">{{ .dateText }}</span>
+      </div>
+      <span class="xp-title">{{ .jobTitle }}</span>
+      <div class="prose">{{ .description | markdownify }}</div>
+    </div>
+  </div>
+  {{ end }}
+</section>
+{{ end }}

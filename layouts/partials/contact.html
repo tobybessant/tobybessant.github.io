@@ -1,0 +1,8 @@
+{{ $c := site.Data.contact }}
+{{ if $c.enabled }}
+<section class="section">
+  <span id="contact" class="section-anchor"></span>
+  <h2 class="section-heading">{{ $c.heading }}</h2>
+  <div class="prose">{{ $c.content | markdownify }}</div>
+</section>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ $about := site.Data.about }}
+{{ $experience := site.Data.experience }}
+{{ $projects := site.Data.projects }}
+{{ $contact := site.Data.contact }}
+
+<nav class="nav">
+  <div class="nav-container">
+    {{ if $about.enabled }}<a href="#about">About</a>{{ end }}
+    {{ if $experience.enabled }}<a href="#experience">Experience</a>{{ end }}
+    {{ if $projects.enabled }}<a href="#projects">Projects</a>{{ end }}
+    {{ if $contact.enabled }}<a href="#contact">Contact</a>{{ end }}
+  </div>
+</nav>

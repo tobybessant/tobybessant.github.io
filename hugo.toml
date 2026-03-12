@@ -1,0 +1,5 @@
+baseURL = "/"
+languageCode = "en-gb"
+title = "Toby Bessant | Software Engineer"
+
+disableKinds = ["taxonomy", "term"]

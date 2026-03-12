@@ -1,0 +1,6 @@
+enabled: true
+heading: "About"
+content: |
+  Hey, I'm Toby - a full-time software engineer. My current day-to-day is spent developing a safe and secure e-commerce platform serving video-games to millions of customers worldwide at [Green Man Gaming](https://www.greenmangaming.com). I'm also involved in co-developing an open-source project called [generate-license-file](https://generate-license-file.js.org), to remove the hassle out of software license compliance for other developers.
+
+  This website was built using TypeScript, React, Next.js, and Hygraph CMS; containerised and hosted on Google Cloud Run via Pulumi.
