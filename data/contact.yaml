@@ -1,3 +1,5 @@
 enabled: true
 heading: "Contact"
-content: "Want to reach out? Please [email me](mailto:toby.bessant.1998@gmail.com)."
+intro: "Want to reach out? Please"
+email: "dG9ieS5iZXNzYW50LjE5OThAZ21haWwuY29t"
+emailLinkText: "email me"

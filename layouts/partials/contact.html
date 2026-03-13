@@ -3,6 +3,6 @@
 <section class="section">
   <span id="contact" class="section-anchor"></span>
   <h2 class="section-heading">{{ $c.heading }}</h2>
-  <div class="prose">{{ $c.content | markdownify }}</div>
+  <p class="prose">{{ $c.intro }} <a href="#" data-email="{{ $c.email }}">{{ $c.emailLinkText }}</a>.</p>
 </section>
 {{ end }}
