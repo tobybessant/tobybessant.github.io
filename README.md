@@ -11,8 +11,8 @@ hugo --minify      # production build → public/
 
 ## Content
 
-All content lives in `data/*.yaml` — no CMS, no API keys. Edit a file and push to deploy.
+Content lives in `data/*.yaml`. Edit a file and push to deploy.
 
 ## Deployment
 
-Pushes to `main` trigger a GitHub Actions workflow that builds and deploys to GitHub Pages automatically.
+Pushes to `main` build and deploy via GitHub Actions.
