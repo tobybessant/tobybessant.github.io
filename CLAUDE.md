@@ -69,6 +69,12 @@ Icons live in `assets/svg/` (not `static/`) and are inlined via Hugo Pipes:
 
 They are plain SVG files keyed by name (mix of sources — not exclusively Feather icons).
 
+## Git
+
+Always use conventional commit messages. This is not optional.
+
+Examples: `fix:`, `feat:`, `chore:`, `docs:`, `refactor:`, `ci:`
+
 ## Deployment
 
 Hosted on GitHub Pages at `tobybessant.co.uk`. Deploys automatically via GitHub Actions (`.github/workflows/deploy.yml`) on push to `main`. The workflow runs `hugo --minify` and uploads `public/` as the Pages artifact.
