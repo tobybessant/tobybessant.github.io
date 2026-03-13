@@ -12,8 +12,8 @@ entries:
       this library has since gone through 3 major releases. The package has had community
       interactions both in the form of code additions and active discussion to provide
       feedback and drive future improvements.
-    keyTechnologies:
-      - "80+ GitHub Stars"
+    tags:
+      - "90+ GitHub Stars"
       - "50k+ peak weekly downloads"
       - "4 major releases"
     links:
