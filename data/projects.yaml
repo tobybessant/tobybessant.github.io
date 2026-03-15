@@ -6,12 +6,10 @@ entries:
     name: "generate-license-file"
     titleLink: "https://generate-license-file.js.org"
     description: >-
-      An npm package to generate a text file containing all of the licences for your
-      production, third-party dependencies. Initially prototyped with a friend as a CLI
-      utility to meet the 'software licensing' dissertation criterion, I'm proud to say
-      this library has since gone through 3 major releases. The package has had community
-      interactions both in the form of code additions and active discussion to provide
-      feedback and drive future improvements.
+      An npm package that generates a text file containing all of the licences for your
+      production, third-party dependencies. Originally prototyped with a friend as a CLI
+      utility for a university dissertation, it has since grown into a library with an
+      active community - attracting contributions, feedback, and discussion across 4 major releases.
     tags:
       - "90+ GitHub Stars"
       - "50k+ peak weekly downloads"
