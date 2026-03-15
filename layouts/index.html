@@ -1,4 +1,8 @@
 {{ define "main" }}
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+  <span class="icon-moon">{{- with resources.Get "svg/moon.svg" }}{{ .Content | safeHTML }}{{ end -}}</span>
+  <span class="icon-sun">{{- with resources.Get "svg/sun.svg" }}{{ .Content | safeHTML }}{{ end -}}</span>
+</button>
 <main class="app">
   <div class="container">
     {{ partial "nav.html" . }}

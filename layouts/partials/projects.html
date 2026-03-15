@@ -5,8 +5,7 @@
   <h2 class="section-heading">{{ $p.heading }}</h2>
   {{ if $p.subheading }}<span class="subheading">{{ $p.subheading }}</span>{{ end }}
 
-  {{ $entries := sort $p.entries "order" }}
-  {{ range $entries }}
+  {{ range $p.entries }}
   <div class="project-entry">
     <div class="project-heading">
       <a class="project-name" href="{{ .titleLink }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>

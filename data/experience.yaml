@@ -1,16 +1,19 @@
-enabled: false
+enabled: true
 heading: "Experience"
 subheading: ""
 entries:
-  - order: 0
-    companyName: "A2Z Cloud"
-    jobTitle: "Business Applications Developer"
-    dateText: "Jun 2019 - Jun 2020"
-    activeRole: false
-    description: "Wrote **code**."
-  - order: 1
-    companyName: "Green Man Gaming"
-    jobTitle: "Software Engineer III"
-    dateText: "Jun 2020 - Present"
-    activeRole: true
-    description: "Wrote **code**, again."
+  - companyName: "Green Man Gaming"
+    activeCompany: true
+    roles:
+      - jobTitle: "Principal Engineer"
+        dateText: "Jan 2025 – Present"
+        description: "Technical lead on infrastructure modernisation, SaaS migrations, and zero-downtime platform scaling."
+      - jobTitle: "Software Engineer III"
+        dateText: "Jun 2020 – Jan 2025"
+        description: "Full-stack contributor across Python, TypeScript, and cloud; built internal tooling and delivered features across a high-traffic e-commerce platform."
+  - companyName: "A2Z Cloud"
+    activeCompany: false
+    roles:
+      - jobTitle: "Business Applications Developer"
+        dateText: "2018 – 2019"
+        description: "Configured and integrated business applications for clients; built Node.js middleware on AWS Lambda and ran requirements workshops."

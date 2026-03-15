@@ -3,17 +3,53 @@
    ===================== */
 :root {
   --color-bg: #F5F0E3;
-  --color-text: #434343;
-  --color-h1: #008787;
-  --color-h2: #33B4B4;
-  --color-h3: #008787;
-  --color-subheading: #595959;
-  --color-nav: #000000;
+  --color-text: #3A3028;
+  --color-h1: #1E3A5F;
+  --color-h2: #8C4D0E;
+  --color-h3: #1E3A5F;
+  --color-subheading: #6B5F55;
+  --color-nav: #2C2420;
   --color-dot-active: #54D851;
-  --color-dot-past: #B6B6B6;
+  --color-dot-past: #C4B8A8;
 
   --font-body: "Vollkorn", "Vollkorn Variable", serif;
   --font-ui: "DM Sans", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #1C1A18;
+    --color-text: #D4CFC4;
+    --color-h1: #4EC9C9;
+    --color-h2: #C4A06E;
+    --color-h3: #4EC9C9;
+    --color-subheading: #9A9188;
+    --color-nav: #E8E3DC;
+    --color-dot-past: #514C44;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #1C1A18;
+  --color-text: #D4CFC4;
+  --color-h1: #4EC9C9;
+  --color-h2: #C4A06E;
+  --color-h3: #4EC9C9;
+  --color-subheading: #9A9188;
+  --color-nav: #E8E3DC;
+  --color-dot-past: #514C44;
+}
+
+/* Dark mode: remove opacity dimming — the bg bleeds through on dark surfaces,
+   killing contrast. The colour values alone provide sufficient hierarchy. */
+:root[data-theme="dark"] .location,
+:root[data-theme="dark"] .subheading { opacity: 1; }
+:root[data-theme="dark"] .xp-date    { opacity: 0.75; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .location,
+  :root:not([data-theme="light"]) .subheading { opacity: 1; }
+  :root:not([data-theme="light"]) .xp-date    { opacity: 0.75; }
 }
 
 /* =====================
@@ -95,6 +131,38 @@ a {
   color: var(--color-nav);
   font-size: 1rem;
 }
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* show moon in light mode, sun in dark mode */
+.theme-toggle .icon-sun { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun  { display: flex; }
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun  { display: flex; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: flex; }
+:root[data-theme="light"] .theme-toggle .icon-sun  { display: none; }
 
 /* =====================
    Hero
@@ -198,17 +266,18 @@ a {
 .icon-link {
   display: flex;
   align-items: center;
+  color: var(--color-subheading);
 }
 
 .icon-link svg {
   width: 22px;
   height: 22px;
-  stroke: #595959;
+  stroke: currentColor;
   transition: stroke 0.15s ease-in-out;
 }
 
 .icon-link:hover svg {
-  stroke: #000000;
+  stroke: var(--color-text);
 }
 
 /* =====================
@@ -260,6 +329,26 @@ a {
 /* =====================
    Experience
    ===================== */
+.xp-timeline {
+  position: relative;
+}
+
+.xp-timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 0;
+  left: 5px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-dot-active)  0%,
+    var(--color-dot-past)   50%,
+    transparent            100%
+  );
+  opacity: 0.4;
+}
+
 .xp-entry {
   display: flex;
   gap: 20px;
@@ -277,12 +366,50 @@ a {
 
 .xp-entry.active .xp-dot {
   background-color: var(--color-dot-active);
+  position: relative;
+  animation: dot-breathe 2s ease-in-out infinite;
+}
+
+.xp-entry.active .xp-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-dot-active);
+  animation: dot-pulse 2s ease-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(2.8); opacity: 0;   }
+}
+
+@keyframes dot-breathe {
+  0%, 100% { transform: scale(1);   }
+  40%      { transform: scale(1.2); }
 }
 
 .xp-body {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  color: var(--color-text);
+}
+
+.xp-company {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.xp-role {
+  display: flex;
+  flex-direction: column;
   gap: 4px;
+}
+
+.xp-role + .xp-role {
+  margin-top: 8px;
 }
 
 .xp-header {
@@ -292,20 +419,16 @@ a {
   gap: 16px;
 }
 
-.xp-company {
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
 .xp-date {
   font-family: var(--font-ui);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   opacity: 0.6;
   white-space: nowrap;
 }
 
 .xp-title {
-  font-size: 1rem;
+  font-family: var(--font-ui);
+  font-size: 1.2rem;
   opacity: 0.8;
 }
 

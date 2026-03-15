@@ -3,6 +3,6 @@
 <section class="section">
   <span id="about" class="section-anchor"></span>
   <h2 class="section-heading">{{ $a.heading }}</h2>
-  <div class="prose">{{ $a.content | markdownify }}</div>
+  <div class="prose">{{ .RenderString $a.content }}</div>
 </section>
 {{ end }}

@@ -2,8 +2,7 @@ enabled: true
 heading: "Open Source"
 subheading: ""
 entries:
-  - order: 0
-    name: "generate-license-file"
+  - name: "generate-license-file"
     titleLink: "https://generate-license-file.js.org"
     description: >-
       An npm package that generates a text file containing all of the licences for your

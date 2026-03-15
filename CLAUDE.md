@@ -21,11 +21,11 @@ All content lives in `data/*.yaml`. No CMS, no API keys. To update content, edit
 
 - `data/landing.yaml` — hero section (name, title, links)
 - `data/about.yaml` — about section
-- `data/experience.yaml` — experience section (currently `enabled: false`)
+- `data/experience.yaml` — experience section
 - `data/projects.yaml` — projects section
 - `data/contact.yaml` — contact section
 
-Each section template checks `{{ if .enabled }}` before rendering. Markdown fields use `{{ .content | markdownify }}`, HTML fields use `{{ .content | safeHTML }}`.
+Each section template checks `{{ if .enabled }}` before rendering. Markdown fields that need render hooks (e.g. external links opening in new tabs) use `{{ .RenderString $data.content }}`; plain markdown fields use `{{ .content | markdownify }}`; HTML fields use `{{ .content | safeHTML }}`.
 
 ### Layouts
 
@@ -36,8 +36,9 @@ layouts/
 ├── baseof.html         ← outer HTML shell (head + main block)
 ├── index.html          ← fills main block, includes all partials
 ├── 404.html            ← not-found page
-├── _markup/
-│   └── render-link.html ← adds target="_blank" rel="noopener noreferrer" to external markdown links
+├── _default/
+│   └── _markup/
+│       └── render-link.html ← adds target="_blank" rel="noopener noreferrer" to external markdown links
 └── partials/
     ├── head.html
     ├── nav.html
