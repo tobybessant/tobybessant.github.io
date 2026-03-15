@@ -1,7 +1,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ site.Data.landing.siteTitle }}</title>
+  <title>{{ site.Title }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
@@ -12,11 +12,11 @@
   {{ $desc := site.Data.about.content | markdownify | plainify | htmlUnescape | chomp | truncate 160 }}
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.BaseURL }}" />
-  <meta property="og:title" content="{{ site.Data.landing.siteTitle }}" />
+  <meta property="og:title" content="{{ site.Title }}" />
   <meta property="og:description" content="{{ $desc }}" />
   <meta property="og:image" content="{{ $ogImg.Permalink }}" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="{{ site.Data.landing.siteTitle }}" />
+  <meta name="twitter:title" content="{{ site.Title }}" />
   <meta name="twitter:description" content="{{ $desc }}" />
   <meta name="twitter:image" content="{{ $ogImg.Permalink }}" />
 </head>

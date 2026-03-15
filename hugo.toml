@@ -1,5 +1,5 @@
 baseURL = "https://tobybessant.co.uk/"
 languageCode = "en-gb"
-title = "Toby Bessant | Software Engineer"
+title = "Toby Bessant | Principal Engineer, London"
 
 disableKinds = ["taxonomy", "term"]
