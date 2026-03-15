@@ -29,13 +29,15 @@ Each section template checks `{{ if .enabled }}` before rendering. Markdown fiel
 
 ### Layouts
 
+Template hierarchy: `baseof.html` defines the outer HTML shell; `index.html` fills the `main` block with all section partials.
+
 ```
 layouts/
-├── baseof.html         ← base HTML shell
-├── index.html          ← root template, includes all partials
-├── 404.html
+├── baseof.html         ← outer HTML shell (head + main block)
+├── index.html          ← fills main block, includes all partials
+├── 404.html            ← not-found page
 ├── _markup/
-│   └── render-link.html
+│   └── render-link.html ← adds target="_blank" rel="noopener noreferrer" to external markdown links
 └── partials/
     ├── head.html
     ├── nav.html
@@ -48,7 +50,7 @@ layouts/
 
 ### Styling
 
-CSS lives in `assets/css/main.css` — processed by Hugo Pipes. Fonts: **Vollkorn Variable** (body/headings), **DM Sans** (UI/tags).
+CSS lives in `assets/css/main.css` — processed by Hugo Pipes. Fonts: **Vollkorn Variable** (body/headings), **DM Sans** (UI/tags), both loaded from Google Fonts CDN.
 
 ### Static assets
 
