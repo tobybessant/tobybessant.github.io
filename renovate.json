@@ -2,9 +2,19 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
   "minimumReleaseAge": "7 days",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^\\.github/workflows/.*\\.yml$"],
+      "matchStrings": ["HUGO_VERSION: (?<currentValue>[\\d.]+)"],
+      "depNameTemplate": "gohugoio/hugo",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    }
+  ],
   "packageRules": [
     {
-      "matchManagers": ["github-actions"],
+      "matchManagers": ["github-actions", "regex"],
       "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": true
     }
