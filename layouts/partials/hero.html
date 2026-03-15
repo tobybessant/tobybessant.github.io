@@ -2,7 +2,15 @@
 
 <div class="hero">
   <div class="profile-img">
-    <img src="{{ $l.profileImage }}" alt="{{ $l.heading }}" />
+    {{ $img := resources.Get "img/profile.png" }}
+    {{ $w200 := $img.Resize "200x" }}
+    {{ $w400 := $img.Resize "400x" }}
+    {{ $w200webp := $img.Resize "200x webp" }}
+    {{ $w400webp := $img.Resize "400x webp" }}
+    <picture>
+      <source type="image/webp" srcset="{{ $w200webp.RelPermalink }} 1x, {{ $w400webp.RelPermalink }} 2x">
+      <img src="{{ $w200.RelPermalink }}" srcset="{{ $w200.RelPermalink }} 1x, {{ $w400.RelPermalink }} 2x" alt="{{ $l.heading }}">
+    </picture>
   </div>
   <div class="text-container">
     <div class="text">
