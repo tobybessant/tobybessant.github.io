@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   <script defer src="/js/email-reveal.js"></script>
   {{ $ogImg := (resources.Get "img/profile.png").Resize "800x" }}
-  {{ $desc := site.Data.about.content | markdownify | plainify | chomp | truncate 200 }}
+  {{ $desc := site.Data.about.content | markdownify | plainify | htmlUnescape | chomp | truncate 200 }}
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.BaseURL }}" />
   <meta property="og:title" content="{{ site.Data.landing.siteTitle }}" />
