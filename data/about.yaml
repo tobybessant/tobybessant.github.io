@@ -1,4 +1,8 @@
+---
 enabled: true
 heading: "About"
 content: |
-  Hey, I'm Toby. I'm a Principal Engineer at [Green Man Gaming](https://www.greenmangaming.com), where I work to provide a safe and secure e-commerce platform serving video games to millions of customers worldwide. I also co-maintain an open-source project, [generate-license-file](https://generate-license-file.js.org), which takes the hassle out of license compliance for other developers.
+  Hey, I'm Toby. I'm a Principal Engineer at [Green Man Gaming](https://www.greenmangaming.com), where I work to provide
+  a safe and secure e-commerce platform serving video games to millions of customers worldwide. I also co-maintain an
+  open-source project, [generate-license-file](https://generate-license-file.js.org), which takes the hassle out of
+  license compliance for other developers.
