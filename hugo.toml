@@ -3,3 +3,4 @@ languageCode = "en-gb"
 title = "Toby Bessant | Principal Engineer, London"
 
 disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
