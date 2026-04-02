@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 env:
-  HUGO_VERSION: 0.159.0
+  HUGO_VERSION: 0.159.1
 
 jobs:
   build:
