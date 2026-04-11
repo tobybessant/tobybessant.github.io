@@ -19,3 +19,14 @@ entries:
         url: "https://github.com/TobyAndToby/generate-license-file"
       - featherIconKey: "package"
         url: "https://www.npmjs.com/package/generate-license-file"
+
+  - name: "protov"
+    titleLink: "https://github.com/tobybessant/protov"
+    description: >-
+      A lightweight version manager for Protocol Buffers (protoc). Written as a single-file
+      Python CLI with zero dependencies, it handles downloading, installing, and switching
+      between protoc versions with an interactive picker.
+    tags: []
+    links:
+      - featherIconKey: "github"
+        url: "https://github.com/tobybessant/protov"
