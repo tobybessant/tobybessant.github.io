@@ -26,6 +26,9 @@ entries:
       A lightweight version manager for Protocol Buffers (protoc). Written as a single-file
       Python CLI with zero dependencies, it handles downloading, installing, and switching
       between protoc versions with an interactive picker.
+
+
+      *Built before I knew about [mise](https://github.com/jdx/mise) — you should just use mise.*
     tags: []
     links:
       - featherIconKey: "github"
