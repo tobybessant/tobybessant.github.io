@@ -5,25 +5,11 @@
   ],
   "dependencyDashboard": false,
   "minimumReleaseAge": "7 days",
-  "customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/^\\.github/workflows/.*\\.yml$/"
-      ],
-      "matchStrings": [
-        "HUGO_VERSION: (?<currentValue>[\\d.]+)"
-      ],
-      "depNameTemplate": "gohugoio/hugo",
-      "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^v(?<version>.*)$"
-    }
-  ],
   "packageRules": [
     {
       "matchManagers": [
         "github-actions",
-        "custom.regex"
+        "mise"
       ],
       "matchUpdateTypes": [
         "major",
