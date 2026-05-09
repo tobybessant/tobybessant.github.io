@@ -1,0 +1,212 @@
+{{- /*
+  Dev-only toolbox, stripped from production via `hugo.IsServer`.
+
+  Add new tools as rows inside `.dev-toolbox-body`. Each row should be a
+  `.dev-tool` with a `<label>` and a control. Toggle `.is-inactive` on
+  the row from JS to dim it when the tool can't take effect right now.
+
+  Palette entries each declare a `mode` ("dark" or "light"); the CSS
+  override and the dropdown's runtime hint are both derived from it.
+*/ -}}
+{{ if hugo.IsServer }}
+{{ $palettes := slice
+  (dict "key" "sage"        "label" "Sage + Honey"             "mode" "dark"
+    "vars" (dict
+      "--color-h1"         "#7FB3A0"
+      "--color-h2"         "#C9A36E"
+      "--color-h3"         "#7FB3A0"
+      "--color-dot-active" "#8FB87A"))
+  (dict "key" "teal"        "label" "Dusty Teal + Terracotta"  "mode" "dark"
+    "vars" (dict
+      "--color-h1"         "#6FA3A3"
+      "--color-h2"         "#C48F6E"
+      "--color-h3"         "#6FA3A3"
+      "--color-dot-active" "#8AAF7A"))
+  (dict "key" "periwinkle"  "label" "Periwinkle + Apricot"     "mode" "dark"
+    "vars" (dict
+      "--color-h1"         "#9B97C4"
+      "--color-h2"         "#C99878"
+      "--color-h3"         "#9B97C4"
+      "--color-dot-active" "#8FB87A"))
+  (dict "key" "olive"       "label" "Olive + Rust"             "mode" "dark"
+    "vars" (dict
+      "--color-h1"         "#9DB07A"
+      "--color-h2"         "#C0825E"
+      "--color-h3"         "#9DB07A"
+      "--color-dot-active" "#BFC97A"))
+  (dict "key" "forest"      "label" "Forest + Honey"            "mode" "light"
+    "vars" (dict
+      "--color-h1"         "#2F5D3C"
+      "--color-h2"         "#A87308"
+      "--color-h3"         "#2F5D3C"
+      "--color-dot-active" "#5B9A47"))
+  (dict "key" "plum"        "label" "Plum + Apricot"            "mode" "light"
+    "vars" (dict
+      "--color-h1"         "#5B3A6B"
+      "--color-h2"         "#B56838"
+      "--color-h3"         "#5B3A6B"
+      "--color-dot-active" "#6FA85B"))
+  (dict "key" "deep-teal"   "label" "Deep Teal + Terracotta"    "mode" "light"
+    "vars" (dict
+      "--color-h1"         "#2A5C66"
+      "--color-h2"         "#A65238"
+      "--color-h3"         "#2A5C66"
+      "--color-dot-active" "#5C9A6B"))
+  (dict "key" "deep-olive"  "label" "Olive + Rust"              "mode" "light"
+    "vars" (dict
+      "--color-h1"         "#5C6B2C"
+      "--color-h2"         "#A04F22"
+      "--color-h3"         "#5C6B2C"
+      "--color-dot-active" "#7A9555"))
+}}
+
+<style>
+  .dev-toolbox {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 999;
+    min-width: 240px;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    background: rgba(28, 26, 24, 0.92);
+    color: #D4CFC4;
+    border: 1px solid #514C44;
+    border-radius: 8px;
+    padding: 8px 10px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  }
+  .dev-toolbox-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 10px;
+    font-weight: 700;
+    color: #9A9188;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #2C2420;
+  }
+  .dev-toolbox-header::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8FB87A;
+    box-shadow: 0 0 6px #8FB87A66;
+  }
+  .dev-toolbox-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .dev-tool {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 4px 10px;
+  }
+  .dev-tool > label {
+    color: #D4CFC4;
+  }
+  .dev-tool select {
+    font: inherit;
+    background: #2C2420;
+    color: inherit;
+    border: 1px solid #514C44;
+    border-radius: 4px;
+    padding: 2px 4px;
+  }
+  .dev-tool.is-inactive > label,
+  .dev-tool.is-inactive select {
+    opacity: 0.5;
+  }
+  {{- range $palettes }}
+  {{- $mode := .mode }}
+  {{- $opposite := cond (eq $mode "dark") "light" "dark" }}
+
+  :root[data-theme="{{ $mode }}"][data-palette="{{ .key }}"] {
+    {{- range $name, $value := .vars }}
+    {{ printf "%s: %s;" $name $value | safeCSS }}
+    {{- end }}
+  }
+  @media (prefers-color-scheme: {{ $mode }}) {
+    :root:not([data-theme="{{ $opposite }}"])[data-palette="{{ .key }}"] {
+      {{- range $name, $value := .vars }}
+      {{ printf "%s: %s;" $name $value | safeCSS }}
+      {{- end }}
+    }
+  }
+  {{- end }}
+</style>
+
+<aside class="dev-toolbox" aria-label="Dev toolbox">
+  <div class="dev-toolbox-header">Dev toolbox</div>
+  <div class="dev-toolbox-body">
+    <div class="dev-tool" data-tool="palette">
+      <label for="dev-palette-select">Palette</label>
+      <select id="dev-palette-select">
+        <option value="">Default</option>
+        {{- range $palettes }}
+        <option value="{{ .key }}" data-mode="{{ .mode }}">{{ .label }} ({{ .mode }})</option>
+        {{- end }}
+      </select>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var saved = localStorage.getItem('dev-palette') || '';
+  if (saved) root.setAttribute('data-palette', saved);
+
+  function effectiveTheme() {
+    var explicit = root.getAttribute('data-theme');
+    if (explicit === 'dark' || explicit === 'light') return explicit;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function init() {
+    var sel = document.getElementById('dev-palette-select');
+    var row = document.querySelector('.dev-tool[data-tool="palette"]');
+    if (!sel || !row) return;
+
+    function syncRow() {
+      var opt = sel.options[sel.selectedIndex];
+      var mode = opt ? opt.dataset.mode || '' : '';
+      row.classList.toggle('is-inactive', !!mode && effectiveTheme() !== mode);
+    }
+
+    sel.value = saved;
+    sel.addEventListener('change', function () {
+      if (sel.value) {
+        root.setAttribute('data-palette', sel.value);
+        localStorage.setItem('dev-palette', sel.value);
+      } else {
+        root.removeAttribute('data-palette');
+        localStorage.removeItem('dev-palette');
+      }
+      syncRow();
+    });
+
+    syncRow();
+
+    new MutationObserver(syncRow).observe(root, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', syncRow);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+{{ end }}

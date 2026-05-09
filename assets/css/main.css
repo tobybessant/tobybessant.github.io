@@ -14,17 +14,19 @@
 
   --font-body: "Vollkorn", "Vollkorn Variable", serif;
   --font-ui: "DM Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --color-bg: #1C1A18;
     --color-text: #D4CFC4;
-    --color-h1: #4EC9C9;
-    --color-h2: #C4A06E;
-    --color-h3: #4EC9C9;
+    --color-h1: #7FB3A0;
+    --color-h2: #C9A36E;
+    --color-h3: #7FB3A0;
     --color-subheading: #9A9188;
     --color-nav: #E8E3DC;
+    --color-dot-active: #8FB87A;
     --color-dot-past: #514C44;
   }
 }
@@ -32,11 +34,12 @@
 :root[data-theme="dark"] {
   --color-bg: #1C1A18;
   --color-text: #D4CFC4;
-  --color-h1: #4EC9C9;
-  --color-h2: #C4A06E;
-  --color-h3: #4EC9C9;
+  --color-h1: #7FB3A0;
+  --color-h2: #C9A36E;
+  --color-h3: #7FB3A0;
   --color-subheading: #9A9188;
   --color-nav: #E8E3DC;
+  --color-dot-active: #8FB87A;
   --color-dot-past: #514C44;
 }
 
@@ -420,8 +423,8 @@ a {
 }
 
 .xp-date {
-  font-family: var(--font-ui);
-  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
   opacity: 0.6;
   white-space: nowrap;
 }
