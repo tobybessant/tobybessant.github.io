@@ -17,7 +17,7 @@
         {{ end }}
       </div>
     </div>
-    <div class="prose">{{ .description | markdownify }}</div>
+    <div class="prose">{{ $.RenderString .description }}</div>
     <div class="tags">
       {{ range .tags }}
         <span>{{ . }}</span>
