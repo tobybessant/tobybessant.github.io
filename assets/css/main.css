@@ -403,6 +403,7 @@ a {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 1.3rem;
+  color: var(--color-h2);
 }
 
 .xp-role {
@@ -432,7 +433,7 @@ a {
 .xp-title {
   font-family: var(--font-ui);
   font-size: 1.2rem;
-  opacity: 0.8;
+  color: var(--color-subheading);
 }
 
 /* =====================
