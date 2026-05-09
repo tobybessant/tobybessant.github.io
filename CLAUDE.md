@@ -5,11 +5,12 @@ This file provides guidance to Claude Code when working with this repository.
 ## Commands
 
 ```bash
+mise install       # install Hugo at the version pinned in mise.toml
 hugo server        # live-reload dev server at http://localhost:1313
 hugo --minify      # production build → public/
 ```
 
-No npm, no build step. Hugo is a self-contained binary.
+No npm, no build step. Hugo is a self-contained binary, managed via `mise`.
 
 ## Architecture
 
@@ -86,7 +87,7 @@ CI runs on pull requests via `.github/workflows/ci.yml` — three concurrent job
 
 ### Hugo version
 
-`HUGO_VERSION` is defined as a top-level `env` var in **both** `deploy.yml` and `ci.yml`. Bump it in both files when upgrading Hugo.
+The Hugo version is pinned in `mise.toml` at the repo root — single source of truth for both local dev (`mise install`) and CI (via `jdx/mise-action`). Renovate raises bump PRs against `mise.toml` automatically.
 
 ### GitHub Actions convention
 
