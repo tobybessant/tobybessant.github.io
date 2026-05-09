@@ -5,14 +5,16 @@
 </button>
 <main class="app">
   <div class="container">
-    {{ partial "nav.html" . }}
-    {{ partial "hero.html" . }}
-    {{ partial "about.html" . }}
-    {{ partial "experience.html" . }}
-    {{ partial "projects.html" . }}
-    {{ partial "posts.html" . }}
-    {{ partial "contact.html" . }}
+    <nav class="post-nav"><a href="/">← Back</a></nav>
+    <article class="post">
+      <header class="post-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Date }}<time class="post-date" datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>{{ end }}
+      </header>
+      <div class="post-content prose">
+        {{ .Content }}
+      </div>
+    </article>
   </div>
 </main>
-{{ partial "dev-toolbox.html" . }}
 {{ end }}

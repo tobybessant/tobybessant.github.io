@@ -1,6 +1,7 @@
 {{ $about := hugo.Data.about }}
 {{ $experience := hugo.Data.experience }}
 {{ $projects := hugo.Data.projects }}
+{{ $posts := hugo.Data.posts }}
 {{ $contact := hugo.Data.contact }}
 
 <nav class="nav">
@@ -8,6 +9,7 @@
     {{ if $about.enabled }}<a href="#about">About</a>{{ end }}
     {{ if $experience.enabled }}<a href="#experience">Experience</a>{{ end }}
     {{ if $projects.enabled }}<a href="#projects">Projects</a>{{ end }}
+    {{ if $posts.enabled }}<a href="#posts">Posts</a>{{ end }}
     {{ if $contact.enabled }}<a href="#contact">Contact</a>{{ end }}
   </div>
 </nav>

@@ -1,0 +1,16 @@
+{{- $algorithm := .Get "algorithm" | default "round-robin" -}}
+{{- $servers := .Get "servers" | default "3" -}}
+{{- $rate := .Get "rate" | default "2" -}}
+<div
+  data-sim-loadbalancer
+  data-algorithm="{{ $algorithm }}"
+  data-servers="{{ $servers }}"
+  data-rate="{{ $rate }}"
+></div>
+{{- if not (.Page.Scratch.Get "sim_loadbalancer_loaded") -}}
+  {{- $css := resources.Get "sims/load-balancer/sim.css" | minify | fingerprint -}}
+  {{- $js := resources.Get "sims/load-balancer/sim.js" | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+  <script defer src="{{ $js.RelPermalink }}"></script>
+  {{- .Page.Scratch.Set "sim_loadbalancer_loaded" true -}}
+{{- end -}}

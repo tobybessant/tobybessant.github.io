@@ -1,0 +1,25 @@
+{{ $p := hugo.Data.posts }}
+{{ if $p.enabled }}
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ if $posts }}
+    {{ $limit := $p.limit | default 3 }}
+    <section class="section">
+      <span id="posts" class="section-anchor"></span>
+      <h2 class="section-heading">{{ $p.heading }}</h2>
+      {{ if $p.subheading }}<span class="subheading">{{ $p.subheading }}</span>{{ end }}
+      <ul class="post-list">
+        {{ range first $limit ($posts.ByDate.Reverse) }}
+          <li class="post-list-entry">
+            <time class="post-list-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            <h3 class="post-list-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ $blurb := .Description | default (.Summary | plainify | truncate 180) }}
+            {{ with $blurb }}<p class="post-list-summary">{{ . }}</p>{{ end }}
+          </li>
+        {{ end }}
+      </ul>
+      {{ if gt (len $posts) $limit }}
+        <a href="/posts/" class="post-list-more">All posts →</a>
+      {{ end }}
+    </section>
+  {{ end }}
+{{ end }}

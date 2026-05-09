@@ -1,0 +1,37 @@
+{{- /*
+  Generic shortcode for per-post bespoke widgets.
+
+  Looks up <name>.js and <name>.css from the post's page bundle resources
+  and emits them once. Any extra named params (other than `name`) become
+  data-* attributes on the mount div, so widget JS can read config.
+
+  Usage in a post bundle:
+    content/posts/foo/
+    ├── index.md
+    ├── widget.js     ← self-init: querySelectorAll('[data-embed="widget"]')
+    └── widget.css    ← optional
+
+  Markdown:
+    {{< embed name="widget" color="red" >}}
+*/ -}}
+{{- $name := .Get "name" -}}
+{{- if not $name -}}{{- errorf "embed: missing required 'name' param at %s" .Position -}}{{- end -}}
+{{- $jsRes := .Page.Resources.GetMatch (printf "%s.js" $name) -}}
+{{- $cssRes := .Page.Resources.GetMatch (printf "%s.css" $name) -}}
+{{- $loadedKey := printf "embed_%s_loaded" $name -}}
+<div data-embed="{{ $name }}"
+{{- range $k, $v := .Params -}}
+  {{- if ne $k "name" -}}{{ printf " data-%s=%q" $k $v | safeHTMLAttr }}{{- end -}}
+{{- end -}}
+></div>
+{{- if not (.Page.Scratch.Get $loadedKey) -}}
+  {{- with $cssRes -}}
+    {{- $css := . | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+  {{- end -}}
+  {{- with $jsRes -}}
+    {{- $js := . | minify | fingerprint -}}
+    <script defer src="{{ $js.RelPermalink }}"></script>
+  {{- end -}}
+  {{- .Page.Scratch.Set $loadedKey true -}}
+{{- end -}}

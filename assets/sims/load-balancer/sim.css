@@ -1,0 +1,103 @@
+.sim-lb {
+  margin: 32px 0;
+  padding: 16px;
+  border: 1px solid var(--color-dot-past);
+  border-radius: 12px;
+}
+
+.sim-lb-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 20px;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.sim-lb-controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sim-lb-controls select {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  padding: 2px 4px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-dot-past);
+  border-radius: 4px;
+}
+
+.sim-lb-controls input[type="range"] {
+  width: 110px;
+}
+
+.sim-lb-controls button {
+  font-family: var(--font-ui);
+  background: transparent;
+  border: 1px solid var(--color-h1);
+  color: var(--color-h1);
+  border-radius: 6px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.sim-lb-controls button:hover {
+  background-color: var(--color-dot-past);
+}
+
+.sim-lb-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-family: var(--font-ui);
+}
+
+.sim-lb-wire {
+  stroke: var(--color-dot-past);
+  stroke-width: 1.5;
+  opacity: 0.7;
+}
+
+.sim-lb-node rect {
+  fill: var(--color-bg);
+  stroke: var(--color-h1);
+  stroke-width: 1.5;
+}
+
+.sim-lb-node text {
+  fill: var(--color-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sim-lb-node--lb rect {
+  stroke: var(--color-h2);
+  stroke-width: 2;
+}
+
+.sim-lb-stat {
+  fill: var(--color-text);
+  font-size: 11px;
+}
+
+.sim-lb-stat--muted {
+  fill: var(--color-subheading);
+  font-size: 10px;
+  opacity: 0.85;
+}
+
+.sim-lb-request {
+  fill: var(--color-dot-active);
+}
+
+.sim-lb-request--processing {
+  fill: var(--color-h2);
+  opacity: 0.75;
+}
